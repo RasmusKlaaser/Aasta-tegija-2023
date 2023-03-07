@@ -1,4 +1,7 @@
-#Introduction
+import random
+
+# Introduction
+
 valik = input("Palun vali eriala: (tarkvaraarendaja) või (süsteemide spetsialist): ")
 if valik.lower() == "tarkvaraarendaja":
     print("Olete valinud tarkvaraarendaja")
@@ -8,11 +11,11 @@ else:
     print("Vale sisestus")
 
 # Rolling a dice
-import random
+result = 0
 roll_dice = input("Write (START) to dice roll: ")
 
 if roll_dice == "start".upper():
-   possible_results = range(1, 5)
+   possible_results = [1, 2, 3, 4, 5]
    result = random.choice(possible_results)
    print("Result of dice rolling is: " + str(result))
 else:
@@ -40,5 +43,5 @@ elif result == 3:
 elif result == 4:
     print(question_4)
 elif result == 5:
-    print(quetion_5)
+    print(question_5)
 
