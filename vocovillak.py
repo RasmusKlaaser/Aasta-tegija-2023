@@ -134,7 +134,7 @@ class Game1(tk.Frame):
         C = tk.Canvas(self, bg="dark blue", height=1080, width=1920)
 
         #Creates a rectangle for the board.
-        rectangle = C.create_rectangle(100, 980, 1820, 100, width=10, outline="gold", fill="#2a3698")
+        rectangle = C.create_rectangle(100, 990, 1820, 100, width=10, outline="gold", fill="#2a3698")
 
         #Creates horizontal lines for the board.
         hz_line1 = C.create_line(100, 240, 1820, 240, width=10, fill="gold")
@@ -260,23 +260,23 @@ class Game1(tk.Frame):
         B17 = tk.Button(C, text=200, bg="#2a3698", fg="white", activebackground="#3d4dd2", font=("Impact", 45),
                         command=lambda: controller.show_frame(Question))
         B17.pack(pady=0, padx=0)
-        B17.place(bordermode="outside", height=140, width=405, x=1375, y=395)
+        B17.place(bordermode="outside", height=140, width=430, x=1375, y=395)
 
         B18 = tk.Button(C, text=300, bg="#2a3698", fg="white", activebackground="#3d4dd2", font=("Impact", 45),
                         command=lambda: controller.show_frame(Question))
         B18.pack(pady=0, padx=0)
-        B18.place(bordermode="outside", height=140, width=405, x=1375, y=545)
+        B18.place(bordermode="outside", height=140, width=430, x=1375, y=545)
 
         B19 = tk.Button(C, text=400, bg="#2a3698", fg="white", activebackground="#3d4dd2", font=("Impact", 45),
                         command=lambda: controller.show_frame(Question))
         B19.pack(pady=0, padx=0)
-        B19.place(bordermode="outside", height=140, width=405, x=1375, y=695)
+        B19.place(bordermode="outside", height=140, width=430, x=1375, y=695)
 
         B20 = tk.Button(C, text=500, bg="#2a3698", fg="white", activebackground="#3d4dd2", font=("Impact", 45),
                         command=lambda: controller.show_frame(Question))
 
         B20.pack(pady=0, padx=0)
-        B20.place(bordermode="outside", height=140, width=405, x=1375, y=845)
+        B20.place(bordermode="outside", height=140, width=430, x=1375, y=845)
 
 
 class Game2(tk.Frame):
