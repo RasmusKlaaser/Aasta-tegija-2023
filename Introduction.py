@@ -13,6 +13,7 @@ else:
     print("Vale sisestus")
 
 # Rolling a dice
+
 result = 0
 if otsus == 1:
     roll_dice = input("Write (START) to dice roll: ")
