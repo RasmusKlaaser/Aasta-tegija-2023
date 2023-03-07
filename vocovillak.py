@@ -20,7 +20,7 @@ class Vocovillak(tk.Tk):
 
         # iterating through a tuple consisting
         # of the different page layouts
-        for F in (StartPage, Job, Game1):
+        for F in (StartPage, Job, Game1, Game2):
             frame = F(container, self)
 
             # initializing frame of that object from
@@ -69,17 +69,25 @@ class Job(tk.Frame):
         tk.Frame.__init__(self, parent)
 
         #
-        C = tk.Canvas(self, bg="#2a3698", height=1080, width=1920)
+        C = tk.Canvas(self, bg="dark blue", height=1080, width=1920)
+
+        rectangle = C.create_rectangle(100, 980, 1820, 100, width=10, outline="gold")
 
         B1 = tk.Button(C, text="Tarkvaraarendaja", bg="#2a3698", fg="yellow", activebackground="#3d4dd2", font=("Impact", 45),command=lambda: controller.show_frame(Game1))
 
         B1.pack(pady=0, padx=0)
-        B1.place(bordermode="outside", height=140, width=430, x=105, y=245)
+        B1.place(bordermode="outside", height=745, width=855, x=105, y=235)
 
         B2 = tk.Button(C, text="Süsteemide Spetsialist", bg="#2a3698", fg="yellow", activebackground="#3d4dd2", font=("Impact", 45), command=lambda: controller.show_frame(Game2))
 
         B2.pack(pady=0, padx=0)
-        B2.place(bordermode="outside", height=140, width=430, x=1675, y=245)
+        B2.place(bordermode="outside", height=745, width=855, x=960, y=235)
+
+        L = tk.Label(C, text="Vali eriala!", bg="#2a3698", fg="white", font=("Impact", 50))
+
+        L.pack(pady=0, padx=0)
+        L.place(bordermode="outside", height=130, width=1710, x=105, y=105)
+
         C.pack(fill="both", expand=True)
 
 
@@ -88,10 +96,10 @@ class Game1(tk.Frame):
         tk.Frame.__init__(self, parent)
 
         #The main shape of the question board.
-        C = tk.Canvas(self, bg="#2a3698", height=1080, width=1920)
+        C = tk.Canvas(self, bg="dark blue", height=1080, width=1920)
 
         #Creates a rectangle for the board.
-        rectangle = C.create_rectangle(100, 980, 1820, 100, width=10, outline="gold")
+        rectangle = C.create_rectangle(100, 980, 1820, 100, width=10, outline="gold", fill="#2a3698")
 
         #Creates horizontal lines for the board.
         hz_line1 = C.create_line(100, 240, 1820, 240, width=10, fill="gold")
@@ -122,6 +130,43 @@ class Game1(tk.Frame):
         C.pack(fill="both", expand=True)
 
 
+class Game2(tk.Frame):
+    def __init__(self, parent, controller):
+        tk.Frame.__init__(self, parent)
+
+        #The main shape of the question board.
+        C = tk.Canvas(self, bg="dark blue", height=1080, width=1920)
+
+        #Creates a rectangle for the board.
+        rectangle = C.create_rectangle(100, 980, 1820, 100, width=10, outline="gold", fill="#2a3698")
+
+        #Creates horizontal lines for the board.
+        hz_line1 = C.create_line(100, 240, 1820, 240, width=10, fill="gold")
+        hz_line2 = C.create_line(100, 390, 1820, 390, width=10, fill="gold")
+        hz_line3 = C.create_line(100, 540, 1820, 540, width=10, fill="gold")
+        hz_line4 = C.create_line(100, 690, 1820, 690, width=10, fill="gold")
+        hz_line5 = C.create_line(100, 840, 1820, 840, width=10, fill="gold")
+
+        #Creates vertical line for the board.
+        vr_line1 = C.create_line(540, 100, 540, 980, width=10, fill="gold")
+        vr_line2 = C.create_line(955, 100, 955, 980, width=10, fill="gold")
+        vr_line3 = C.create_line(1370, 100, 1370, 980, width=10, fill="gold")
+
+        #The buttons to get to a question.
+
+        B1 = tk.Button(C, text=100, bg="#2a3698", fg="white", activebackground="#3d4dd2", font=("Impact", 45), command=lambda: controller.show_frame(Question))
+
+        B1.pack(pady=0, padx=0)
+        B1.place(bordermode="outside", height=140, width=430, x=105, y=245)
+
+        # The labels for categories.
+
+        L = tk.Label(C, text="ITs", bg="#2a3698", fg="white", font=("Impact", 50))
+
+        L.pack()
+        L.place(bordermode="outside", height=130, width=430, x=105, y=105)
+
+        C.pack(fill="both", expand=True)
 
 app = Vocovillak()
 app.mainloop()
