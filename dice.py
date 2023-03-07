@@ -15,3 +15,4 @@ else:
 
 if roll_dice == 1:
     print(question_1)
+d
