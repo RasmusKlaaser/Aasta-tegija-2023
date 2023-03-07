@@ -20,7 +20,7 @@ class Vocovillak(tk.Tk):
 
         # iterating through a tuple consisting
         # of the different page layouts
-        for F in (StartPage, Game1):
+        for F in (StartPage, Job, Game1):
             frame = F(container, self)
 
             # initializing frame of that object from
@@ -48,7 +48,7 @@ class StartPage(tk.Frame):
         C = tk.Canvas(self, bg="dark blue", height=1080, width=1920)
 
         #Creates a button to continue to the next page.
-        B = tk.Button(C, text="START", fg="gold", bg="#2a3698", font=("Impact", 45), command=lambda: controller.show_frame(Game1))
+        B = tk.Button(C, text="START", fg="gold", bg="#2a3698", font=("Impact", 45), command=lambda: controller.show_frame(Job))
 
         #Moves the button into the correct place.
         B.pack()
@@ -71,7 +71,17 @@ class Job(tk.Frame):
         #
         C = tk.Canvas(self, bg="#2a3698", height=1080, width=1920)
 
-        B1 = tk.Button(C, text=, bg="#2a3698", fg="white", activebackground="#3d4dd2", font=("Impact", 45),command=lambda: controller.show_frame(Question))
+        B1 = tk.Button(C, text="Tarkvaraarendaja", bg="#2a3698", fg="yellow", activebackground="#3d4dd2", font=("Impact", 45),command=lambda: controller.show_frame(Game1))
+
+        B1.pack(pady=0, padx=0)
+        B1.place(bordermode="outside", height=140, width=430, x=105, y=245)
+
+        B2 = tk.Button(C, text="Süsteemide Spetsialist", bg="#2a3698", fg="yellow", activebackground="#3d4dd2", font=("Impact", 45), command=lambda: controller.show_frame(Game2))
+
+        B2.pack(pady=0, padx=0)
+        B2.place(bordermode="outside", height=140, width=430, x=1675, y=245)
+        C.pack(fill="both", expand=True)
+
 
 class Game1(tk.Frame):
     def __init__(self, parent, controller):
