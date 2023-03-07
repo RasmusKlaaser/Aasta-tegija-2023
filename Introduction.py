@@ -14,7 +14,7 @@ else:
 result = 0
 roll_dice = input("Write (START) to dice roll: ")
 
-if roll_dice == "start".upper():
+if roll_dice.upper() == "START":
    possible_results = [1, 2, 3, 4, 5]
    result = random.choice(possible_results)
    print("Result of dice rolling is: " + str(result))
