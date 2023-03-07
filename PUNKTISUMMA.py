@@ -63,3 +63,61 @@ else:
     vastuseid_kokku -= 1
 print(f"Punkti summa on nüüd: {score}")
 print(f"{vastuseid_kokku} vastust on nüüd alles")
+
+#ALL THE QUESTIONS BELOW ARE FOR ITS!!!
+question_1_2 = "Kas IT-süsteemide spetsialist saab tööle IT-süsteemide spetsialistina või klienditoespetsialistina?    (SPETSIALIST/KLIENDITUGI)"
+question_2_2 = "Kas tegu on ettevõttevaldkonnaga, kus spetsialistie järele on väike nõudlus?    (JAH/EI)"
+question_3_2 = "Kas IT-spetsialist haldab arvutivõrke, telefoniteenuseid ja vajadusel ehitab müüri?      (JAH/EI)"
+question_4_2 = "Mida tähendab lühend IT?   (FILM/INFO-TEADUS/INFO-TEHNOLOOGIA)"
+question_5_2 = "Milliseid võtmeoskusi on vaja edukaks IT-spetsialisti karjääriks?  (ERINEVATE ARVUTIKEELTE TUNDMINE/INVESTEERIMINE/LOOGILINE MÕTLEMINE)"
+
+print(question_1_2)
+ans = input("Vastus: ")
+if ans.lower() == "spetsialist":
+    score += row1
+    vastuseid_kokku -= 1
+else:
+    score -= row1 / 2
+    vastuseid_kokku -= 1
+print(f"Punkti summa on nüüd: {score}")
+print(f"{vastuseid_kokku} vastust on nüüd alles")
+print(question_2_2)
+ans = input("Vastus: ")
+if ans.lower() == "ei":
+    score += row2
+    vastuseid_kokku -= 1
+else:
+    score -= row2 / 2
+    vastuseid_kokku -= 1
+print(f"Punkti summa on nüüd: {score}")
+print(f"{vastuseid_kokku} vastust on nüüd alles")
+print(question_3_2)
+ans = input("Vastus: ")
+if ans.lower() == "ei":
+    score += row3
+    vastuseid_kokku -= 1
+else:
+    score -= row3 / 2
+    vastuseid_kokku -= 1
+print(f"Punkti summa on nüüd: {score}")
+print(f"{vastuseid_kokku} vastust on nüüd alles")
+print(question_4_2)
+ans = input("Vastus: ")
+if ans.lower() == "info-tehnoloogia":
+    score += row4
+    vastuseid_kokku -= 1
+else:
+    score -= row4 / 2
+    vastuseid_kokku -= 1
+print(f"Punkti summa on nüüd: {score}")
+print(f"{vastuseid_kokku} vastust on nüüd alles")
+print(question_5_2)
+ans = input("Vastus: ")
+if ans.lower() == "loogiline mõtlemine":
+    score += row5
+    vastuseid_kokku -= 1
+else:
+    score -= row5 / 2
+    vastuseid_kokku -= 1
+print(f"Punkti summa on nüüd: {score}")
+print(f"{vastuseid_kokku} vastust on nüüd alles")
