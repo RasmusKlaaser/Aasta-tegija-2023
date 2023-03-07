@@ -434,5 +434,29 @@ class Game2(tk.Frame):
 
         C.pack(fill="both", expand=True)
 
+
+class Question(tk.Frame):
+    def __init__(self, parent, controller):
+        tk.Frame.__init__(self, parent)
+
+        def checker(self,  )
+
+        #Creates board
+        C = tk.Canvas(self, bg="dark blue", height=1080, width=1920)
+
+        rectangle = C.create_rectangle(100, 980, 1820, 100, width=10, outline="gold")
+        B1 = tk.Button(C, text="Vasta", bg="#2a3698", fg="white", activebackground="#3d4dd2", font=("Impact", 45),
+                        command=)
+
+        B1.pack(pady=0, padx=0)
+        B1.place(bordermode="outside", height=140, width=405, x=1375, y=845)
+
+        L = tk.Label(C, text="Vasta küsimusele!", bg="#2a3698", fg="white", font=("Impact", 50))
+
+        L.pack(pady=0, padx=0)
+        L.place(bordermode="outside", height=130, width=1710, x=105, y=105)
+
+        C.pack(fill="both", expand=True)
+
 app = Vocovillak()
 app.mainloop()
