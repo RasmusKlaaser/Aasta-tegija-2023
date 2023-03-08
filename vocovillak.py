@@ -1,6 +1,5 @@
 import tkinter as tk
 import random
-import 3_possible_answers.py as 3_answer
 
 
 def numgen():
@@ -16,6 +15,22 @@ for i in numgen():
     list1.append(i)
     final_num = list1[0]
     print(final_num)
+
+question_hob_1 = ["Kas VOCO-s on tasuta jõusaal?   (JAH/EI)", "JAH", 100]
+questions_hob_4 = ["Koolis on Improring.   (ÕIGE/VALE)", "ÕIGE", 400]
+questions_hob_5 = ["Väiketehnika ringi on tehnikahuvilised, kelle sooviks on ehitada võistlusmasinad ja lisaks ka nendega kestvussõidu võistlustel osaleda.   (ÕIGE/VALE)", "ÕIGE", 500]
+questions_ope_3 = ["Kas VOCO-s on õpiränded tasuta?   (JAH/EI)", "JAH", 300]
+questions_ope_4 = ["Kas praktikakohast võib kujuneda esimene ja kindel töökoht.   (KINDLASTI/PIGEM MITTE)", "KINDLASTI", 400]
+questions_ope_5 = ["VOCO-s on tunniplaan üksluine.  (ÕIGE/VALE SEE MUUTUB IGA NÄDAL)", "VALE SEE MUUTUB IGA NÄDAL", 500]
+questions_voco_1 = ["Kas Tartu Rakenduslikus Kolledžis omandad koos tööalaste praktiliste oskustega nii kutse kui keskhariduse.  (JAH/EI)", "JAH", 100]
+questions_voco_3 = ["Kas Tartu Rakenduslik Kolledž toetab õpilaste osalemist kutsevõistlustel.  (KINDLASTI MITTE/JAH)", "JAH", 300]
+questions_voco_4 = ["Mitu osakonda on VOCO-s?  (7/11)", "7", 400]
+
+questions_hob_2 = ["Mis on VOCO rahvatantsurühma nimi?   (TRISKEL/MÕMMIKUD/TORNUM)", "TRISKEL", 200]
+questions_hob_3 = ["Mis pille saab kooli bändis mängida?   (ELEKTRIKITARRI/OREL/OBOE)", "ELEKTRIKITARRI", 300]
+questions_voco_2 = ["Kus toimub õppetöö ja praktika? (POMMIAUGUS/LABORITES/PÕLLUL)", "LABORITES", 200]
+questions_voco_5 = ["Mis on Voco oma enda e-päeviku nimi?  (E-KOOL/STUUDIUM/SISEVEEB)", "SISEVEEB", 500]
+
 
 class Vocovillak(tk.Tk):
 
@@ -576,30 +591,39 @@ class Game2(tk.Frame):
 class Question1(tk.Frame):
     def __init__(self, parent, controller):
         tk.Frame.__init__(self, parent)
-        result
-        def ():
+        def Answer():
             if B2['state'] == tk.NORMAL:
                 B2['state'] = tk.DISABLED
             else:
                 B2['state'] = tk.NORMAL
+
         #Creates board
         C = tk.Canvas(self, bg="dark blue", height=1080, width=1920)
 
         rectangle = C.create_rectangle(100, 980, 1820, 100, width=10, outline="gold")
 
-        B1 = tk.Button(C, text="Vasta", bg="#2a3698", fg="white", activebackground="#3d4dd2", font=("Impact", 45))
+        B1 = tk.Button(C, text="Vasta", bg="#2a3698", fg="white", activebackground="#3d4dd2", font=("Impact", 45), command=Answer)
 
         B1.pack(pady=0, padx=0)
-        B1.place(bordermode="outside", height=140, width=405, x=1375, y=845)
+        B1.place(bordermode="outside", height=140, width=405, x=755, y=835)
 
-        L = tk.Label(C, text="Vasta küsimusele!", bg="#2a3698", fg="white", font=("Impact", 50))
+        B2 = tk.Button(C, state=tk.DISABLED, text="Edasi >>>", bg="#2a3698", fg="yellow", activebackground="#3d4dd2", font=("Impact", 35), command=lambda: controller.show_frame_reset(PointSum1))
 
-        L.pack(pady=0, padx=0)
-        L.place(bordermode="outside", height=130, width=1710, x=105, y=105)
+        B2.pack(pady=0, padx=0)
+        B2.place(bordermode="outside", height=100, width=250, x=1565, y=875)
+
+        L1 = tk.Label(C, text="Vasta küsimusele!", bg="#2a3698", fg="white", font=("Impact", 50))
+
+        L1.pack(pady=0, padx=0)
+        L1.place(bordermode="outside", height=130, width=1710, x=105, y=105)
+
+        L2 = tk.Label(C, text="faa", bg="#2a3698", fg="yellow", font=("Impact", 50))
+
+        L2.pack(padx=0, pady=0)
+        L2.place(bordermode="outside", height=260, width=1710, x=105, y=235)
 
         C.pack(fill="both", expand=True)
         result = 0
-
 
 
         C = tk.Canvas(self, bg="dark blue", height=1080, width=1920)
@@ -608,17 +632,7 @@ class Question1(tk.Frame):
 
         rectangle = C.create_rectangle(755, 480, 1165, 300, width=10, outline="gold", fill="black")
 
-        B1 = tk.Button(C, text="Veereta", bg="#2a3698", fg="yellow", activebackground="#3d4dd2", font=("Impact", 45),
-                       command=Diceroll2)
 
-        B1.pack(pady=0, padx=0)
-        B1.place(bordermode="outside", height=200, width=400, x=755, y=540)
-
-        B2 = tk.Button(C, state=tk.DISABLED, text="Edasi >>>", bg="#2a3698", fg="yellow", activebackground="#3d4dd2",
-                       font=("Impact", 35), command=lambda: controller.show_frame_reset(Game2))
-
-        B2.pack(pady=0, padx=0)
-        B2.place(bordermode="outside", height=100, width=250, x=1565, y=875)
 #class PointSum1:
   #  def __init__(self, parent, controller):
  #       tk.Frame.__init__(self, parent)
