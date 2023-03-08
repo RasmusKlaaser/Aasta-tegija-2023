@@ -30,7 +30,19 @@ questions_hob_2 = ["Mis on VOCO rahvatantsurühma nimi?   (TRISKEL/MÕMMIKUD/TOR
 questions_hob_3 = ["Mis pille saab kooli bändis mängida?   (ELEKTRIKITARRI/OREL/OBOE)", "ELEKTRIKITARRI", 300]
 questions_voco_2 = ["Kus toimub õppetöö ja praktika? (POMMIAUGUS/LABORITES/PÕLLUL)", "LABORITES", 200]
 questions_voco_5 = ["Mis on Voco oma enda e-päeviku nimi?  (E-KOOL/STUUDIUM/SISEVEEB)", "SISEVEEB", 500]
+question_4_2 = ["Mida tähendab lühend IT?   (FILM/INFO-TEADUS/INFO-TEHNOLOOGIA)", "INFO-TEHNOLOOGIA", 400]
 
+question_1 = ["Kas selle erialaga saab olulise eelise õpigute jätkamiseks kõrgkoolis ja võib spetsialiseeruda IT valdkonna profiks?    (JAH/EI)", "JAH", 100]
+question_2 = ["Milline eriala on eriliselt kiiresti kasvav ja maailma tulevik?     (TARKVARAARENDJA/VEEBIHALDUR)", "TARKVARAARENDAJA", 200]
+question_3 = ["Tegu on globaalse kasvava ettevõtlusvaldkonnaga, kus heade spetsialistide järele on pidevalt suur nõudlus, mistõttu tarkvaraarendaja leiab hõlpsasti tööd ka väljaspool Eestit.      (ÕIGE/VALE)", "õige", 300]
+question_4 = ["Tarkvaraarendajad saavad töötada vähestes valdkondades.    (ÕIGE/VALE)", "VALE", 400]
+question_5 = ["Eesti IT-sektoris on palgatase keskmisest kõrgem ning tarkvaraarendaja töötasu alumine määr võib ületada Eesti keskmise töötasu. (ÕIGE/VALE)", "õige", 500]
+
+question_1_2 = ["Kas IT-süsteemide spetsialist saab tööle IT-süsteemide spetsialistina või klienditoespetsialistina?    (SPETSIALIST/KLIENDITUGI)", "SPETSIALIST", 100]
+question_2_2 = ["Kas tegu on ettevõttevaldkonnaga, kus spetsialistie järele on väike nõudlus?    (JAH/EI)", "EI", 200]
+question_3_2 = ["Kas IT-spetsialist haldab arvutivõrke, telefoniteenuseid ja vajadusel ehitab müüri?      (JAH/EI)", "EI", 300]
+# line 33
+question_5_2 = ["Milliseid võtmeoskusi on vaja edukaks IT-spetsialisti karjääriks?  (ERINEVATE ARVUTIKEELTE TUNDMINE/INVESTEERIMINE/LOOGILINE MÕTLEMINE)", "LOOGILINE MÕTLEMINE", 500]
 
 class Vocovillak(tk.Tk):
 
@@ -73,9 +85,13 @@ class Vocovillak(tk.Tk):
     def show_frame_reset(self, cont):
         frame = self.frames[cont]
         frame.tkraise()
-        B2['state'] = tk.DISABLED
+        #B2['state'] = tk.DISABLED
 
-
+    def show_frame_pointcalc(self, cont):
+        frame = self.frames[cont]
+        frame.tkraise()
+        numgen()
+       # score += question_score
 #The start page.
 
 class StartPage(tk.Frame):
@@ -235,7 +251,7 @@ class Game1(tk.Frame):
 
         #The buttons to get to a question.
 
-        B1 = tk.Button(C,state=tk.DISABLED, text=100, bg="#2a3698", fg="white", activebackground="#3d4dd2", font=("Impact", 45), command=lambda: controller.show_frame(Question))
+        B1 = tk.Button(C,state=tk.DISABLED, text=100, bg="#2a3698", fg="white", activebackground="#3d4dd2", font=("Impact", 45), command=lambda: controller.show_frame(Question1))
 
         B1.pack(pady=0, padx=0)
         B1.place(bordermode="outside", height=140, width=430, x=105, y=245)
@@ -247,22 +263,22 @@ class Game1(tk.Frame):
         L.pack()
         L.place(bordermode="outside", height=130, width=430, x=105, y=105)
 
-        B2 = tk.Button(C,state=tk.DISABLED, text=200, bg="#2a3698", fg="white", activebackground="#3d4dd2", font=("Impact", 45), command=lambda: controller.show_frame(Question))
+        B2 = tk.Button(C,state=tk.DISABLED, text=200, bg="#2a3698", fg="white", activebackground="#3d4dd2", font=("Impact", 45), command=lambda: controller.show_frame(Question1))
         B2.pack(pady=0, padx=0)
         B2.place(bordermode="outside", height=140, width=430, x=105, y=395)
 
         B3 = tk.Button(C,state=tk.DISABLED, text=300, bg="#2a3698", fg="white", activebackground="#3d4dd2", font=("Impact", 45),
-                       command=lambda: controller.show_frame(Question))
+                       command=lambda: controller.show_frame(Question1))
         B3.pack(pady=0, padx=0)
         B3.place(bordermode="outside", height=140, width=430, x=105, y=545)
 
         B4 = tk.Button(C,state=tk.DISABLED, text=400, bg="#2a3698", fg="white", activebackground="#3d4dd2", font=("Impact", 45),
-                       command=lambda: controller.show_frame(Question))
+                       command=lambda: controller.show_frame(Question1))
         B4.pack(pady=0, padx=0)
         B4.place(bordermode="outside", height=140, width=430, x=105, y=695)
 
         B5 = tk.Button(C,state=tk.DISABLED, text=500, bg="#2a3698", fg="white", activebackground="#3d4dd2", font=("Impact", 45),
-                       command=lambda: controller.show_frame(Question))
+                       command=lambda: controller.show_frame(Question1))
 
         B5.pack(pady=0, padx=0)
         B5.place(bordermode="outside", height=140, width=430, x=105, y=845)
@@ -415,7 +431,7 @@ class Game2(tk.Frame):
         #The buttons to get to a question.
 
         B1 = tk.Button(C, state=tk.DISABLED, text=100, bg="#2a3698", fg="white", activebackground="#3d4dd2",
-                       font=("Impact", 45), command=lambda: controller.show_frame(Question))
+                       font=("Impact", 45), command=lambda: controller.show_frame(Question3))
 
         B1.pack(pady=0, padx=0)
         B1.place(bordermode="outside", height=140, width=430, x=105, y=245)
@@ -428,25 +444,25 @@ class Game2(tk.Frame):
         L.place(bordermode="outside", height=130, width=430, x=105, y=105)
 
         B2 = tk.Button(C, state=tk.DISABLED, text=200, bg="#2a3698", fg="white", activebackground="#3d4dd2",
-                       font=("Impact", 45), command=lambda: controller.show_frame(Question))
+                       font=("Impact", 45), command=lambda: controller.show_frame(Question3))
         B2.pack(pady=0, padx=0)
         B2.place(bordermode="outside", height=140, width=430, x=105, y=395)
 
         B3 = tk.Button(C, state=tk.DISABLED, text=300, bg="#2a3698", fg="white", activebackground="#3d4dd2",
                        font=("Impact", 45),
-                       command=lambda: controller.show_frame(Question))
+                       command=lambda: controller.show_frame(Question3))
         B3.pack(pady=0, padx=0)
         B3.place(bordermode="outside", height=140, width=430, x=105, y=545)
 
         B4 = tk.Button(C, state=tk.DISABLED, text=400, bg="#2a3698", fg="white", activebackground="#3d4dd2",
                        font=("Impact", 45),
-                       command=lambda: controller.show_frame(Question))
+                       command=lambda: controller.show_frame(Question4))
         B4.pack(pady=0, padx=0)
         B4.place(bordermode="outside", height=140, width=430, x=105, y=695)
 
         B5 = tk.Button(C, state=tk.DISABLED, text=500, bg="#2a3698", fg="white", activebackground="#3d4dd2",
                        font=("Impact", 45),
-                       command=lambda: controller.show_frame(Question))
+                       command=lambda: controller.show_frame(Question3))
 
         B5.pack(pady=0, padx=0)
         B5.place(bordermode="outside", height=140, width=430, x=105, y=845)
@@ -591,6 +607,11 @@ class Game2(tk.Frame):
 class Question1(tk.Frame):
     def __init__(self, parent, controller):
         tk.Frame.__init__(self, parent)
+
+        question = question_1[0]
+        question_true_ans = question_1[1]
+
+
         def Answer():
             if B2['state'] == tk.NORMAL:
                 B2['state'] = tk.DISABLED
@@ -600,7 +621,7 @@ class Question1(tk.Frame):
         #Creates board
         C = tk.Canvas(self, bg="dark blue", height=1080, width=1920)
 
-        rectangle = C.create_rectangle(100, 980, 1820, 100, width=10, outline="gold")
+        rectangle = C.create_rectangle(100, 980, 1820, 100, width=10, outline="gold", fill="#2a3698")
 
         B1 = tk.Button(C, text="Vasta", bg="#2a3698", fg="white", activebackground="#3d4dd2", font=("Impact", 45), command=Answer)
 
@@ -617,7 +638,7 @@ class Question1(tk.Frame):
         L1.pack(pady=0, padx=0)
         L1.place(bordermode="outside", height=130, width=1710, x=105, y=105)
 
-        L2 = tk.Label(C, text="faa", bg="#2a3698", fg="yellow", font=("Impact", 50))
+        L2 = tk.Label(C, text=f"{question}", bg="#2a3698", fg="yellow", font=("Impact", 50))
 
         L2.pack(padx=0, pady=0)
         L2.place(bordermode="outside", height=260, width=1710, x=105, y=235)
@@ -628,14 +649,51 @@ class PointSum1(tk.Frame):
     def __init__(self, parent, controller):
         tk.Frame.__init__(self, parent)
 
+        question_score = question_1[2]
+        #score
+
+
+
+
         C = tk.Canvas(self, bg="dark blue", height=1080, width=1920)
 
         rectangle = C.create_rectangle(100, 980, 1820, 100, width=10, outline="gold")
 
-        B2 = tk.Button(C, text="Edasi >>>", bg="#2a3698", fg="yellow", activebackground="#3d4dd2", font=("Impact", 35), command=lambda: controller.show_frame_reset(Dice1))
+        B2 = tk.Button(C, text="Edasi >>>", bg="#2a3698", fg="yellow", activebackground="#3d4dd2", font=("Impact", 35), command=lambda: controller.show_frame(Dice1))
 
         B2.pack(pady=0, padx=0)
         B2.place(bordermode="outside", height=100, width=250, x=1565, y=875)
+
+        L1 = tk.Label(C, text="Praegune Skoor", bg="#2a3698", fg="white", font=("Impact", 50))
+
+        L1.pack(pady=0, padx=0)
+        L1.place(bordermode="outside", height=130, width=1710, x=105, y=105)
+
+        C.pack(fill="both", expand=True)
+
+
+class Gameend(tk.Frame):
+    def __init__(self, parent, controller):
+        tk.Frame.__init__(self, parent)
+
+        C = tk.Canvas(self, bg="dark blue", height=1080, width=1920)
+
+        rectangle = C.create_rectangle(100, 980, 1820, 100, width=10, outline="gold")
+
+        B = tk.Button(C, text="RESTART", fg="gold", bg="#2a3698", font=("Impact", 45), command=lambda: controller.show_frame(Job))
+
+        B2.pack(pady=0, padx=0)
+        B2.place(bordermode="outside", height=100, width=250, x=1565, y=875)
+
+        L1 = tk.Label(C, text="Mängu Lõpp!", bg="#2a3698", fg="white", font=("Impact", 50))
+
+        L1.pack(pady=0, padx=0)
+        L1.place(bordermode="outside", height=130, width=1710, x=105, y=105)
+
+        L1 = tk.Label(C, text="Teie, skoor kokku!", bg="#2a3698", fg="white", font=("Impact", 50))
+
+        L1.pack(pady=0, padx=0)
+        L1.place(bordermode="outside", height=130, width=1710, x=105, y=105)
 
         C.pack(fill="both", expand=True)
 
