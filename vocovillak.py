@@ -1,4 +1,20 @@
 import tkinter as tk
+import random
+
+
+def numgen():
+    list0 = []
+    row = 0
+    possible_results = [1, 2, 3, 4, 5]
+    row = random.choice(possible_results)
+    list0.append(row)
+    return list0
+
+
+list1 = []
+for i in numgen():
+    list1.append(i)
+final_num = list1[0]
 
 
 class Vocovillak(tk.Tk):
@@ -21,7 +37,7 @@ class Vocovillak(tk.Tk):
 
         # iterating through a tuple consisting
         # of the different page layouts
-        for F in (StartPage, Job, Dice1, Game1, Game2):
+        for F in (StartPage, Job, Dice1, Dice2, Game1, Game2, Question, PointSum1, PointSum2):
             frame = F(container, self)
 
             # initializing frame of that object from
@@ -33,11 +49,18 @@ class Vocovillak(tk.Tk):
 
         self.show_frame(StartPage)
 
+
     # to display the current frame passed as
     # parameter
     def show_frame(self, cont):
         frame = self.frames[cont]
         frame.tkraise()
+
+    def show_frame_reset(self, cont):
+        frame = self.frames[cont]
+        frame.tkraise()
+        B2["state"] = tk.DISABLED
+
 
 #The start page.
 
@@ -72,14 +95,14 @@ class Job(tk.Frame):
         #
         C = tk.Canvas(self, bg="dark blue", height=1080, width=1920)
 
-        rectangle = C.create_rectangle(100, 980, 1820, 100, width=10, outline="gold")
+        rectangle = C.create_rectangle(100, 980, 1820, 100, width=10, outline="gold", fill="#2a3698")
 
-        B1 = tk.Button(C, text="Tarkvaraarendaja", bg="#2a3698", fg="yellow", activebackground="#3d4dd2", font=("Impact", 45), command=lambda: controller.show_frame(Game1))
+        B1 = tk.Button(C, text="Tarkvaraarendaja", bg="#2a3698", fg="yellow", activebackground="#3d4dd2", font=("Impact", 45), command=lambda: controller.show_frame(Dice1))
 
         B1.pack(pady=0, padx=0)
         B1.place(bordermode="outside", height=740, width=855, x=105, y=235)
 
-        B2 = tk.Button(C, text="Süsteemide Spetsialist", bg="#2a3698", fg="yellow", activebackground="#3d4dd2", font=("Impact", 45), command=lambda: controller.show_frame(Game2))
+        B2 = tk.Button(C, text="Süsteemide Spetsialist", bg="#2a3698", fg="yellow", activebackground="#3d4dd2", font=("Impact", 45), command=lambda: controller.show_frame(Dice2))
 
         B2.pack(pady=0, padx=0)
         B2.place(bordermode="outside", height=740, width=855, x=960, y=235)
@@ -95,14 +118,38 @@ class Job(tk.Frame):
 class Dice1(tk.Frame):
     def __init__(self, parent, controller):
         tk.Frame.__init__(self, parent)
+        result = 0
+
+        def diceroll1():
+            result = final_num
+            if B2['state'] == tk.NORMAL:
+                B2['state'] = tk.DISABLED
+            else:
+                B2['state'] = tk.NORMAL
+            L2["text"] = result
 
         C = tk.Canvas(self, bg="dark blue", height=1080, width=1920)
 
         rectangle = C.create_rectangle(100, 980, 1820, 100, width=10, outline="gold", fill="#2a3698")
 
-        B1 = tk.Button(textvariable=var1)
+        rectangle = C.create_rectangle(655, 600, 1265, 400, width=10, outline="gold", fill="black")
 
-        L1 = tk.Label(C, text="Däring", bg="blue", fg="white", font=("Impact", 50))
+        B1 = tk.Button(C, text="Veereta", bg="#2a3698", fg="yellow", activebackground="#3d4dd2", font=("Impact", 45), command=diceroll1)
+
+        B1.pack(pady=0, padx=0)
+        B1.place(bordermode="outside", height=200, width=500, x=700, y=700)
+
+        B2 = tk.Button(C, state=tk.DISABLED, text="Edasi >>>", bg="#2a3698", fg="yellow", activebackground="#3d4dd2", font=("Impact", 35), command=lambda: controller.show_frame_reset(Game1))
+
+        B2.pack(pady=0, padx=0)
+        B2.place(bordermode="outside", height=100, width=250, x=1565, y=875)
+
+        L2 = tk.Label(C, text=result, bg="black", fg="#2a3698", font=("Impact", 50))
+
+        L2.pack(pady=0, padx=0)
+        L2.place(bordermode="outside", height=190, width=600, x=660, y=405)
+
+        L1 = tk.Label(C, text="Täring", bg="#2a3698", fg="white", font=("Impact", 50))
 
         L1.pack(pady=0, padx=0)
         L1.place(bordermode="outside", height=130, width=1710, x=105, y=105)
@@ -110,15 +157,41 @@ class Dice1(tk.Frame):
         C.pack(fill="both", expand=True)
 
 
-class Dice1(tk.Frame):
+class Dice2(tk.Frame):
     def __init__(self, parent, controller):
         tk.Frame.__init__(self, parent)
+        result = 0
+
+        def diceroll2():
+            result = final_num
+            if B2['state'] == tk.NORMAL:
+                B2['state'] = tk.DISABLED
+            else:
+                B2['state'] = tk.NORMAL
+            L2["text"] = result
 
         C = tk.Canvas(self, bg="dark blue", height=1080, width=1920)
 
         rectangle = C.create_rectangle(100, 980, 1820, 100, width=10, outline="gold", fill="#2a3698")
 
-        L1 = tk.Label(C, text="Däring", bg="blue", fg="white", font=("Impact", 50))
+        rectangle = C.create_rectangle(655, 600, 1265, 400, width=10, outline="gold", fill="black")
+
+        B1 = tk.Button(C, text="Veereta", bg="#2a3698", fg="yellow", activebackground="#3d4dd2", font=("Impact", 45), command=diceroll2)
+
+        B1.pack(pady=0, padx=0)
+        B1.place(bordermode="outside", height=200, width=500, x=700, y=700)
+
+        B2 = tk.Button(C, state=tk.DISABLED, text="Edasi >>>", bg="#2a3698", fg="yellow", activebackground="#3d4dd2", font=("Impact", 35), command=lambda: controller.show_frame_reset(Game2))
+
+        B2.pack(pady=0, padx=0)
+        B2.place(bordermode="outside", height=100, width=250, x=1565, y=875)
+
+        L2 = tk.Label(C, text=result, bg="black", fg="#2a3698", font=("Impact", 50))
+
+        L2.pack(pady=0, padx=0)
+        L2.place(bordermode="outside", height=190, width=600, x=660, y=405)
+
+        L1 = tk.Label(C, text="Täring", bg="#2a3698", fg="white", font=("Impact", 50))
 
         L1.pack(pady=0, padx=0)
         L1.place(bordermode="outside", height=130, width=1710, x=105, y=105)
@@ -149,8 +222,7 @@ class Game1(tk.Frame):
         vr_line3 = C.create_line(1370, 100, 1370, 985, width=10, fill="gold")
 
         #The buttons to get to a question.
-
-        B1 = tk.Button(C, text=100, bg="#2a3698", fg="white", activebackground="#3d4dd2", font=("Impact", 45), command=lambda: controller.show_frame(Question))
+        B1 = tk.Button(C, state=tk.DISABLED, text=100, bg="#2a3698", fg="white", activebackground="#3d4dd2", font=("Impact", 45), command=lambda: controller.show_frame(Question))
 
         B1.pack(pady=0, padx=0)
         B1.place(bordermode="outside", height=140, width=430, x=105, y=245)
@@ -162,56 +234,52 @@ class Game1(tk.Frame):
         L.pack()
         L.place(bordermode="outside", height=130, width=430, x=105, y=105)
 
-        C.pack(fill="both", expand=True)
+        B2 = tk.Button(C, state=tk.DISABLED, text=200, bg="#2a3698", fg="white", activebackground="#3d4dd2", font=("Impact", 45), command=lambda: controller.show_frame(Question))
 
-        B2 = tk.Button(C, text=200, bg="#2a3698", fg="white", activebackground="#3d4dd2", font=("Impact", 45), command=lambda: controller.show_frame(Question))
         B2.pack(pady=0, padx=0)
         B2.place(bordermode="outside", height=140, width=430, x=105, y=395)
 
-        B3 = tk.Button(C, text=300, bg="#2a3698", fg="white", activebackground="#3d4dd2", font=("Impact", 45),
-                       command=lambda: controller.show_frame(Question))
+        B3 = tk.Button(C, state=tk.DISABLED, text=300, bg="#2a3698", fg="white", activebackground="#3d4dd2", font=("Impact", 45),command=lambda: controller.show_frame(Question))
+
         B3.pack(pady=0, padx=0)
         B3.place(bordermode="outside", height=140, width=430, x=105, y=545)
 
-        B4 = tk.Button(C, text=400, bg="#2a3698", fg="white", activebackground="#3d4dd2", font=("Impact", 45),
-                       command=lambda: controller.show_frame(Question))
+        B4 = tk.Button(C, state=tk.DISABLED, text=400, bg="#2a3698", fg="white", activebackground="#3d4dd2", font=("Impact", 45),command=lambda: controller.show_frame(Question))
+
         B4.pack(pady=0, padx=0)
         B4.place(bordermode="outside", height=140, width=430, x=105, y=695)
 
-        B5 = tk.Button(C, text=500, bg="#2a3698", fg="white", activebackground="#3d4dd2", font=("Impact", 45),
-                       command=lambda: controller.show_frame(Question))
+        B5 = tk.Button(C, state=tk.DISABLED, text=500, bg="#2a3698", fg="white", activebackground="#3d4dd2", font=("Impact", 45),command=lambda: controller.show_frame(Question))
 
         B5.pack(pady=0, padx=0)
         B5.place(bordermode="outside", height=140, width=430, x=105, y=845)
-
 
         L = tk.Label(C, text="Õppetöö", bg="#2a3698", fg="white", font=("Impact", 50))
 
         L.pack()
         L.place(bordermode="outside", height=130, width=400, x=545, y=105)
 
-        B6 = tk.Button(C, text=100, bg="#2a3698", fg="white", activebackground="#3d4dd2", font=("Impact", 45),
-                       command=lambda: controller.show_frame(Question))
+        B6 = tk.Button(C, state=tk.DISABLED, text=100, bg="#2a3698", fg="white", activebackground="#3d4dd2", font=("Impact", 45),command=lambda: controller.show_frame(Question))
+
         B6.pack(pady=0, padx=0)
         B6.place(bordermode="outside", height=140, width=405, x=545, y=245)
 
-        B7 = tk.Button(C, text=200, bg="#2a3698", fg="white", activebackground="#3d4dd2", font=("Impact", 45),
-                       command=lambda: controller.show_frame(Question))
+        B7 = tk.Button(C, state=tk.DISABLED, text=200, bg="#2a3698", fg="white", activebackground="#3d4dd2", font=("Impact", 45),command=lambda: controller.show_frame(Question))
+
         B7.pack(pady=0, padx=0)
         B7.place(bordermode="outside", height=140, width=405, x=545, y=395)
 
-        B8 = tk.Button(C, text=300, bg="#2a3698", fg="white", activebackground="#3d4dd2", font=("Impact", 45),
-                       command=lambda: controller.show_frame(Question))
+        B8 = tk.Button(C, state=tk.DISABLED, text=300, bg="#2a3698", fg="white", activebackground="#3d4dd2", font=("Impact", 45),command=lambda: controller.show_frame(Question))
+
         B8.pack(pady=0, padx=0)
         B8.place(bordermode="outside", height=140, width=405, x=545, y=545)
 
-        B9 = tk.Button(C, text=400, bg="#2a3698", fg="white", activebackground="#3d4dd2", font=("Impact", 45),
-                       command=lambda: controller.show_frame(Question))
+        B9 = tk.Button(C, state=tk.DISABLED, text=400, bg="#2a3698", fg="white", activebackground="#3d4dd2", font=("Impact", 45),command=lambda: controller.show_frame(Question))
+
         B9.pack(pady=0, padx=0)
         B9.place(bordermode="outside", height=140, width=405, x=545, y=695)
 
-        B10 = tk.Button(C, text=500, bg="#2a3698", fg="white", activebackground="#3d4dd2", font=("Impact", 45),
-                       command=lambda: controller.show_frame(Question))
+        B10 = tk.Button(C, state=tk.DISABLED, text=500, bg="#2a3698", fg="white", activebackground="#3d4dd2", font=("Impact", 45),command=lambda: controller.show_frame(Question))
 
         B10.pack(pady=0, padx=0)
         B10.place(bordermode="outside", height=140, width=405, x=545, y=845)
@@ -221,28 +289,27 @@ class Game1(tk.Frame):
         L.pack()
         L.place(bordermode="outside", height=130, width=400, x=965, y=105)
 
-        B11 = tk.Button(C, text=100, bg="#2a3698", fg="white", activebackground="#3d4dd2", font=("Impact", 45),
-                       command=lambda: controller.show_frame(Question))
+        B11 = tk.Button(C, state=tk.DISABLED, text=100, bg="#2a3698", fg="white", activebackground="#3d4dd2", font=("Impact", 45),command=lambda: controller.show_frame(Question))
+
         B11.pack(pady=0, padx=0)
         B11.place(bordermode="outside", height=140, width=405, x=960, y=245)
 
-        B12 = tk.Button(C, text=200, bg="#2a3698", fg="white", activebackground="#3d4dd2", font=("Impact", 45),
-                       command=lambda: controller.show_frame(Question))
+        B12 = tk.Button(C, state=tk.DISABLED, text=200, bg="#2a3698", fg="white", activebackground="#3d4dd2", font=("Impact", 45),command=lambda: controller.show_frame(Question))
+
         B12.pack(pady=0, padx=0)
         B12.place(bordermode="outside", height=140, width=405, x=960, y=395)
 
-        B13 = tk.Button(C, text=300, bg="#2a3698", fg="white", activebackground="#3d4dd2", font=("Impact", 45),
-                       command=lambda: controller.show_frame(Question))
+        B13 = tk.Button(C, state=tk.DISABLED, text=300, bg="#2a3698", fg="white", activebackground="#3d4dd2", font=("Impact", 45),command=lambda: controller.show_frame(Question))
+
         B13.pack(pady=0, padx=0)
         B13.place(bordermode="outside", height=140, width=405, x=960, y=545)
 
-        B14 = tk.Button(C, text=400, bg="#2a3698", fg="white", activebackground="#3d4dd2", font=("Impact", 45),
-                       command=lambda: controller.show_frame(Question))
+        B14 = tk.Button(C, state=tk.DISABLED, text=400, bg="#2a3698", fg="white", activebackground="#3d4dd2", font=("Impact", 45),command=lambda: controller.show_frame(Question))
+
         B14.pack(pady=0, padx=0)
         B14.place(bordermode="outside", height=140, width=405, x=960, y=695)
 
-        B15 = tk.Button(C, text=500, bg="#2a3698", fg="white", activebackground="#3d4dd2", font=("Impact", 45),
-                        command=lambda: controller.show_frame(Question))
+        B15 = tk.Button(C, state=tk.DISABLED, text=500, bg="#2a3698", fg="white", activebackground="#3d4dd2", font=("Impact", 45),command=lambda: controller.show_frame(Question))
 
         B15.pack(pady=0, padx=0)
         B15.place(bordermode="outside", height=140, width=405, x=960, y=845)
@@ -252,31 +319,58 @@ class Game1(tk.Frame):
         L.pack()
         L.place(bordermode="outside", height=130, width=400, x=1375, y=105)
 
-        B16 = tk.Button(C, text=100, bg="#2a3698", fg="white", activebackground="#3d4dd2", font=("Impact", 45),
-                        command=lambda: controller.show_frame(Question))
+        B16 = tk.Button(C, state=tk.DISABLED, text=100, bg="#2a3698", fg="white", activebackground="#3d4dd2", font=("Impact", 45),command=lambda: controller.show_frame(Question))
+
         B16.pack(pady=0, padx=0)
         B16.place(bordermode="outside", height=140, width=440, x=1375, y=245)
 
-        B17 = tk.Button(C, text=200, bg="#2a3698", fg="white", activebackground="#3d4dd2", font=("Impact", 45),
-                        command=lambda: controller.show_frame(Question))
+        B17 = tk.Button(C, state=tk.DISABLED, text=200, bg="#2a3698", fg="white", activebackground="#3d4dd2", font=("Impact", 45),command=lambda: controller.show_frame(Question))
+
         B17.pack(pady=0, padx=0)
         B17.place(bordermode="outside", height=140, width=440, x=1375, y=395)
 
-        B18 = tk.Button(C, text=300, bg="#2a3698", fg="white", activebackground="#3d4dd2", font=("Impact", 45),
-                        command=lambda: controller.show_frame(Question))
+        B18 = tk.Button(C, state=tk.DISABLED, text=300, bg="#2a3698", fg="white", activebackground="#3d4dd2", font=("Impact", 45),command=lambda: controller.show_frame(Question))
+
         B18.pack(pady=0, padx=0)
         B18.place(bordermode="outside", height=140, width=440, x=1375, y=545)
 
-        B19 = tk.Button(C, text=400, bg="#2a3698", fg="white", activebackground="#3d4dd2", font=("Impact", 45),
-                        command=lambda: controller.show_frame(Question))
+        B19 = tk.Button(C, state=tk.DISABLED, text=400, bg="#2a3698", fg="white", activebackground="#3d4dd2", font=("Impact", 45),command=lambda: controller.show_frame(Question))
+
         B19.pack(pady=0, padx=0)
         B19.place(bordermode="outside", height=140, width=440, x=1375, y=695)
 
-        B20 = tk.Button(C, text=500, bg="#2a3698", fg="white", activebackground="#3d4dd2", font=("Impact", 45),
-                        command=lambda: controller.show_frame(Question))
+        B20 = tk.Button(C, state=tk.DISABLED, text=500, bg="#2a3698", fg="white", activebackground="#3d4dd2", font=("Impact", 45),command=lambda: controller.show_frame(Question))
 
         B20.pack(pady=0, padx=0)
         B20.place(bordermode="outside", height=140, width=440, x=1375, y=845)
+
+        if final_num == 1:
+            B1['state'] = tk.NORMAL
+            B6['state'] = tk.NORMAL
+            B11['state'] = tk.NORMAL
+            B16['state'] = tk.NORMAL
+        elif final_num == 2:
+            B2['state'] = tk.NORMAL
+            B7['state'] = tk.NORMAL
+            B12['state'] = tk.NORMAL
+            B17['state'] = tk.NORMAL
+        elif final_num == 3:
+            B3['state'] = tk.NORMAL
+            B8['state'] = tk.NORMAL
+            B13['state'] = tk.NORMAL
+            B18['state'] = tk.NORMAL
+        elif final_num == 4:
+            B4['state'] = tk.NORMAL
+            B9['state'] = tk.NORMAL
+            B14['state'] = tk.NORMAL
+            B19['state'] = tk.NORMAL
+        elif final_num == 5:
+            B5['state'] = tk.NORMAL
+            B10['state'] = tk.NORMAL
+            B15['state'] = tk.NORMAL
+            B20['state'] = tk.NORMAL
+
+        C.pack(fill="both", expand=True)
 
 
 class Game2(tk.Frame):
@@ -287,7 +381,7 @@ class Game2(tk.Frame):
         C = tk.Canvas(self, bg="dark blue", height=1080, width=1920)
 
         #Creates a rectangle for the board.
-        rectangle = C.create_rectangle(100, 980, 1820, 100, width=10, outline="gold", fill="#2a3698")
+        rectangle = C.create_rectangle(100, 990, 1820, 100, width=10, outline="gold", fill="#2a3698")
 
         #Creates horizontal lines for the board.
         hz_line1 = C.create_line(100, 240, 1820, 240, width=10, fill="gold")
@@ -297,14 +391,12 @@ class Game2(tk.Frame):
         hz_line5 = C.create_line(100, 840, 1820, 840, width=10, fill="gold")
 
         #Creates vertical line for the board.
-        vr_line1 = C.create_line(540, 100, 540, 980, width=10, fill="gold")
-        vr_line2 = C.create_line(955, 100, 955, 980, width=10, fill="gold")
-        vr_line3 = C.create_line(1370, 100, 1370, 980, width=10, fill="gold")
+        vr_line1 = C.create_line(540, 100, 540, 985, width=10, fill="gold")
+        vr_line2 = C.create_line(955, 100, 955, 985, width=10, fill="gold")
+        vr_line3 = C.create_line(1370, 100, 1370, 985, width=10, fill="gold")
 
         #The buttons to get to a question.
-
-        B1 = tk.Button(C, text=100, bg="#2a3698", fg="white", activebackground="#3d4dd2", font=("Impact", 45),
-                       command=lambda: controller.show_frame(Question))
+        B1 = tk.Button(C, state=tk.DISABLED, text=100, bg="#2a3698", fg="white", activebackground="#3d4dd2", font=("Impact", 45), command=lambda: controller.show_frame(Question))
 
         B1.pack(pady=0, padx=0)
         B1.place(bordermode="outside", height=140, width=430, x=105, y=245)
@@ -316,25 +408,26 @@ class Game2(tk.Frame):
         L.pack()
         L.place(bordermode="outside", height=130, width=430, x=105, y=105)
 
-        C.pack(fill="both", expand=True)
+        B2 = tk.Button(C, state=tk.DISABLED, text=200, bg="#2a3698", fg="white", activebackground="#3d4dd2",
+                            font=("Impact", 45), command=lambda: controller.show_frame(Question))
 
-        B2 = tk.Button(C, text=200, bg="#2a3698", fg="white", activebackground="#3d4dd2", font=("Impact", 45),
-                       command=lambda: controller.show_frame(Question))
         B2.pack(pady=0, padx=0)
         B2.place(bordermode="outside", height=140, width=430, x=105, y=395)
 
-        B3 = tk.Button(C, text=300, bg="#2a3698", fg="white", activebackground="#3d4dd2", font=("Impact", 45),
-                       command=lambda: controller.show_frame(Question))
+        B3 = tk.Button(C, state=tk.DISABLED, text=300, bg="#2a3698", fg="white", activebackground="#3d4dd2",
+                            font=("Impact", 45), command=lambda: controller.show_frame(Question))
+
         B3.pack(pady=0, padx=0)
         B3.place(bordermode="outside", height=140, width=430, x=105, y=545)
 
-        B4 = tk.Button(C, text=400, bg="#2a3698", fg="white", activebackground="#3d4dd2", font=("Impact", 45),
-                       command=lambda: controller.show_frame(Question))
+        B4 = tk.Button(C, state=tk.DISABLED, text=400, bg="#2a3698", fg="white", activebackground="#3d4dd2",
+                            font=("Impact", 45), command=lambda: controller.show_frame(Question))
+
         B4.pack(pady=0, padx=0)
         B4.place(bordermode="outside", height=140, width=430, x=105, y=695)
 
-        B5 = tk.Button(C, text=500, bg="#2a3698", fg="white", activebackground="#3d4dd2", font=("Impact", 45),
-                       command=lambda: controller.show_frame(Question))
+        B5 = tk.Button(C, state=tk.DISABLED, text=500, bg="#2a3698", fg="white", activebackground="#3d4dd2",
+                            font=("Impact", 45), command=lambda: controller.show_frame(Question))
 
         B5.pack(pady=0, padx=0)
         B5.place(bordermode="outside", height=140, width=430, x=105, y=845)
@@ -344,28 +437,32 @@ class Game2(tk.Frame):
         L.pack()
         L.place(bordermode="outside", height=130, width=400, x=545, y=105)
 
-        B6 = tk.Button(C, text=100, bg="#2a3698", fg="white", activebackground="#3d4dd2", font=("Impact", 45),
-                       command=lambda: controller.show_frame(Question))
+        B6 = tk.Button(C, state=tk.DISABLED, text=100, bg="#2a3698", fg="white", activebackground="#3d4dd2",
+                            font=("Impact", 45), command=lambda: controller.show_frame(Question))
+
         B6.pack(pady=0, padx=0)
         B6.place(bordermode="outside", height=140, width=405, x=545, y=245)
 
-        B7 = tk.Button(C, text=200, bg="#2a3698", fg="white", activebackground="#3d4dd2", font=("Impact", 45),
-                       command=lambda: controller.show_frame(Question))
+        B7 = tk.Button(C, state=tk.DISABLED, text=200, bg="#2a3698", fg="white", activebackground="#3d4dd2",
+                            font=("Impact", 45), command=lambda: controller.show_frame(Question))
+
         B7.pack(pady=0, padx=0)
         B7.place(bordermode="outside", height=140, width=405, x=545, y=395)
 
-        B8 = tk.Button(C, text=300, bg="#2a3698", fg="white", activebackground="#3d4dd2", font=("Impact", 45),
-                       command=lambda: controller.show_frame(Question))
+        B8 = tk.Button(C, state=tk.DISABLED, text=300, bg="#2a3698", fg="white", activebackground="#3d4dd2",
+                            font=("Impact", 45), command=lambda: controller.show_frame(Question))
+
         B8.pack(pady=0, padx=0)
         B8.place(bordermode="outside", height=140, width=405, x=545, y=545)
 
-        B9 = tk.Button(C, text=400, bg="#2a3698", fg="white", activebackground="#3d4dd2", font=("Impact", 45),
-                       command=lambda: controller.show_frame(Question))
+        B9 = tk.Button(C, state=tk.DISABLED, text=400, bg="#2a3698", fg="white", activebackground="#3d4dd2",
+                            font=("Impact", 45), command=lambda: controller.show_frame(Question))
+
         B9.pack(pady=0, padx=0)
         B9.place(bordermode="outside", height=140, width=405, x=545, y=695)
 
-        B10 = tk.Button(C, text=500, bg="#2a3698", fg="white", activebackground="#3d4dd2", font=("Impact", 45),
-                        command=lambda: controller.show_frame(Question))
+        B10 = tk.Button(C, state=tk.DISABLED, text=500, bg="#2a3698", fg="white", activebackground="#3d4dd2",
+                             font=("Impact", 45), command=lambda: controller.show_frame(Question))
 
         B10.pack(pady=0, padx=0)
         B10.place(bordermode="outside", height=140, width=405, x=545, y=845)
@@ -375,28 +472,32 @@ class Game2(tk.Frame):
         L.pack()
         L.place(bordermode="outside", height=130, width=400, x=965, y=105)
 
-        B11 = tk.Button(C, text=100, bg="#2a3698", fg="white", activebackground="#3d4dd2", font=("Impact", 45),
-                        command=lambda: controller.show_frame(Question))
+        B11 = tk.Button(C, state=tk.DISABLED, text=100, bg="#2a3698", fg="white", activebackground="#3d4dd2",
+                             font=("Impact", 45), command=lambda: controller.show_frame(Question))
+
         B11.pack(pady=0, padx=0)
         B11.place(bordermode="outside", height=140, width=405, x=960, y=245)
 
-        B12 = tk.Button(C, text=200, bg="#2a3698", fg="white", activebackground="#3d4dd2", font=("Impact", 45),
-                        command=lambda: controller.show_frame(Question))
+        B12 = tk.Button(C, state=tk.DISABLED, text=200, bg="#2a3698", fg="white", activebackground="#3d4dd2",
+                             font=("Impact", 45), command=lambda: controller.show_frame(Question))
+
         B12.pack(pady=0, padx=0)
         B12.place(bordermode="outside", height=140, width=405, x=960, y=395)
 
-        B13 = tk.Button(C, text=300, bg="#2a3698", fg="white", activebackground="#3d4dd2", font=("Impact", 45),
-                        command=lambda: controller.show_frame(Question))
+        B13 = tk.Button(C, state=tk.DISABLED, text=300, bg="#2a3698", fg="white", activebackground="#3d4dd2",
+                             font=("Impact", 45), command=lambda: controller.show_frame(Question))
+
         B13.pack(pady=0, padx=0)
         B13.place(bordermode="outside", height=140, width=405, x=960, y=545)
 
-        B14 = tk.Button(C, text=400, bg="#2a3698", fg="white", activebackground="#3d4dd2", font=("Impact", 45),
-                        command=lambda: controller.show_frame(Question))
+        B14 = tk.Button(C, state=tk.DISABLED, text=400, bg="#2a3698", fg="white", activebackground="#3d4dd2",
+                             font=("Impact", 45), command=lambda: controller.show_frame(Question))
+
         B14.pack(pady=0, padx=0)
         B14.place(bordermode="outside", height=140, width=405, x=960, y=695)
 
-        B15 = tk.Button(C, text=500, bg="#2a3698", fg="white", activebackground="#3d4dd2", font=("Impact", 45),
-                        command=lambda: controller.show_frame(Question))
+        B15 = tk.Button(C, state=tk.DISABLED, text=500, bg="#2a3698", fg="white", activebackground="#3d4dd2",
+                             font=("Impact", 45), command=lambda: controller.show_frame(Question))
 
         B15.pack(pady=0, padx=0)
         B15.place(bordermode="outside", height=140, width=405, x=960, y=845)
@@ -406,33 +507,136 @@ class Game2(tk.Frame):
         L.pack()
         L.place(bordermode="outside", height=130, width=400, x=1375, y=105)
 
-        B16 = tk.Button(C, text=100, bg="#2a3698", fg="white", activebackground="#3d4dd2", font=("Impact", 45),
-                        command=lambda: controller.show_frame(Question))
+        B16 = tk.Button(C, state=tk.DISABLED, text=100, bg="#2a3698", fg="white", activebackground="#3d4dd2",
+                             font=("Impact", 45), command=lambda: controller.show_frame(Question))
+
         B16.pack(pady=0, padx=0)
-        B16.place(bordermode="outside", height=140, width=405, x=1375, y=245)
+        B16.place(bordermode="outside", height=140, width=440, x=1375, y=245)
 
-        B17 = tk.Button(C, text=200, bg="#2a3698", fg="white", activebackground="#3d4dd2", font=("Impact", 45),
-                        command=lambda: controller.show_frame(Question))
+        B17 = tk.Button(C, state=tk.DISABLED, text=200, bg="#2a3698", fg="white", activebackground="#3d4dd2",
+                             font=("Impact", 45), command=lambda: controller.show_frame(Question))
+
         B17.pack(pady=0, padx=0)
-        B17.place(bordermode="outside", height=140, width=405, x=1375, y=395)
+        B17.place(bordermode="outside", height=140, width=440, x=1375, y=395)
 
-        B18 = tk.Button(C, text=300, bg="#2a3698", fg="white", activebackground="#3d4dd2", font=("Impact", 45),
-                        command=lambda: controller.show_frame(Question))
+        B18 = tk.Button(C, state=tk.DISABLED, text=300, bg="#2a3698", fg="white", activebackground="#3d4dd2",
+                             font=("Impact", 45), command=lambda: controller.show_frame(Question))
+
         B18.pack(pady=0, padx=0)
-        B18.place(bordermode="outside", height=140, width=405, x=1375, y=545)
+        B18.place(bordermode="outside", height=140, width=440, x=1375, y=545)
 
-        B19 = tk.Button(C, text=400, bg="#2a3698", fg="white", activebackground="#3d4dd2", font=("Impact", 45),
-                        command=lambda: controller.show_frame(Question))
+        B19 = tk.Button(C, state=tk.DISABLED, text=400, bg="#2a3698", fg="white", activebackground="#3d4dd2",
+                             font=("Impact", 45), command=lambda: controller.show_frame(Question))
+
         B19.pack(pady=0, padx=0)
-        B19.place(bordermode="outside", height=140, width=405, x=1375, y=695)
+        B19.place(bordermode="outside", height=140, width=440, x=1375, y=695)
 
-        B20 = tk.Button(C, text=500, bg="#2a3698", fg="white", activebackground="#3d4dd2", font=("Impact", 45),
-                        command=lambda: controller.show_frame(Question))
+        B20 = tk.Button(C, state=tk.DISABLED, text=500, bg="#2a3698", fg="white", activebackground="#3d4dd2",
+                             font=("Impact", 45), command=lambda: controller.show_frame(Question))
 
         B20.pack(pady=0, padx=0)
-        B20.place(bordermode="outside", height=140, width=405, x=1375, y=845)
+        B20.place(bordermode="outside", height=140, width=440, x=1375, y=845)
+
+        if final_num == 1:
+            B1['state'] = tk.NORMAL
+            B6['state'] = tk.NORMAL
+            B11['state'] = tk.NORMAL
+            B16['state'] = tk.NORMAL
+        elif final_num == 2:
+            B2['state'] = tk.NORMAL
+            B7['state'] = tk.NORMAL
+            B12['state'] = tk.NORMAL
+            B17['state'] = tk.NORMAL
+        elif final_num == 3:
+            B3['state'] = tk.NORMAL
+            B8['state'] = tk.NORMAL
+            B13['state'] = tk.NORMAL
+            B18['state'] = tk.NORMAL
+        elif final_num == 4:
+            B4['state'] = tk.NORMAL
+            B9['state'] = tk.NORMAL
+            B14['state'] = tk.NORMAL
+            B19['state'] = tk.NORMAL
+        elif final_num == 5:
+            B5['state'] = tk.NORMAL
+            B10['state'] = tk.NORMAL
+            B15['state'] = tk.NORMAL
+            B20['state'] = tk.NORMAL
 
         C.pack(fill="both", expand=True)
+
+
+class Question(tk.Frame):
+    def __init__(self, parent, controller):
+        tk.Frame.__init__(self, parent)
+
+        def Submit1():
+            if B2['state'] == tk.NORMAL:
+                B2['state'] = tk.DISABLED
+            else:
+                B2['state'] = tk.NORMAL
+
+        C = tk.Canvas(self, bg="dark blue", height=1080, width=1920)
+
+        rectangle = C.create_rectangle(100, 980, 1820, 100, width=10, outline="gold", fill="#2a3698")
+
+        B1 = tk.Button(C, text="Vasta", bg="#2a3698", fg="yellow", activebackground="#3d4dd2", font=("Impact", 45), command=Submit1)
+
+        B1.pack(pady=0, padx=0)
+        B1.place(bordermode="outside", height=200, width= 500, x=700, y=875)
+
+        B2 = tk.Button(C, state=tk.DISABLED, text="Edasi >>>", bg="#2a3698", fg="yellow", activebackground="#3d4dd2", font=("Impact", 35), command=lambda: controller.show_frame_reset(PointSum1))
+
+        B2.pack(pady=0, padx=0)
+        B2.place(bordermode="outside", height=100, width=250, x=1565, y=875)
+
+        L1 = tk.Label(C, text="Vasta Küsimusele!", bg="#2a3698", fg="white", font=("Impact", 50))
+
+        L1.pack(pady=0, padx=0)
+        L1.place(bordermode="outside", height=130, width=1710, x=105, y=105)
+
+        L2 = tk.Label(C, text="ee", bg="blue", fg="white", font=("Impact", 45))
+        CheckVar1 = tk.IntVar()
+        CheckVar2 = tk.IntVar()
+        C1 = tk.Checkbutton(C, text="}aa", variable=CheckVar1, onvalue=1, offvalue=0, height=0, width=0, bg="#2a3698")
+        C2 = tk.Checkbutton(C, text="}aa", variable=CheckVar2, onvalue=1, offvalue=0, height=0, width=0, bg="#2a3698")
+        C1.pack(pady=0, padx=0)
+        C2.pack(pady=0, padx=0)
+        C1.place(bordermode="outside", x=500, y=800)
+        C2.place(bordermode="outside", x=1000, y=200)
+        C.pack(fill="both", expand=True)
+
+class PointSum1(tk.Frame):
+    def __init__(self, parent, controller):
+        tk.Frame.__init__(self ,parent)
+
+        C = tk.Canvas(self, bg="dark blue", height=1080, width=1920)
+
+        rectangle = C.create_rectangle(100, 980, 1820, 100, width=10, outline="gold", fill="#2a3698")
+
+        B1 = tk.Button(C, text="Edasi >>>", bg="#2a3698", fg="yellow", activebackground="#3d4dd2", font=("Impact", 35), command=lambda: controller.show_frame_reset(Dice1))
+
+        B1.pack(pady=0, padx=0)
+        B1.place(bordermode="outside", height=100, width=250, x=1565, y=875)
+
+        C.pack(fill="both", expand=True)
+
+
+class PointSum2(tk.Frame):
+    def __init__(self, parent, controller):
+        tk.Frame.__init__(self ,parent)
+
+        C = tk.Canvas(self, bg="dark blue", height=1080, width=1920)
+
+        rectangle = C.create_rectangle(100, 980, 1820, 100, width=10, outline="gold", fill="#2a3698")
+
+        B1 = tk.Button(C, text="Edasi >>>", bg="#2a3698", fg="yellow", activebackground="#3d4dd2", font=("Impact", 35), command=lambda: controller.show_frame(Dice2))
+
+        B1.pack(pady=0, padx=0)
+        B1.place(bordermode="outside", height=100, width=250, x=1565, y=875)
+
+        C.pack(fill="both", expand=True)
+
 
 app = Vocovillak()
 app.mainloop()
