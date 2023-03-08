@@ -621,7 +621,7 @@ class Question1(tk.Frame):
         #Creates board
         C = tk.Canvas(self, bg="dark blue", height=1080, width=1920)
 
-        rectangle = C.create_rectangle(100, 980, 1820, 100, width=10, outline="gold", fill="#2a3698")
+        rectangle = C.create_rectangle(100, 980, 1820, 100, width=10, outline="gold")
 
         B1 = tk.Button(C, text="Vasta", bg="#2a3698", fg="white", activebackground="#3d4dd2", font=("Impact", 45), command=Answer)
 
@@ -638,10 +638,10 @@ class Question1(tk.Frame):
         L1.pack(pady=0, padx=0)
         L1.place(bordermode="outside", height=130, width=1710, x=105, y=105)
 
-        L2 = tk.Label(C, text=f"{question}", bg="#2a3698", fg="yellow", font=("Impact", 50))
+        L2 = tk.Label(C, text="question1", bg="#2a3698", fg="yellow", font=("Impact", 50))
 
         L2.pack(padx=0, pady=0)
-        L2.place(bordermode="outside", height=260, width=1710, x=105, y=235)
+        L2.place(bordermode="outside", height=260, width=600, x=655, y=300)
 
         C.pack(fill="both", expand=True)
 
