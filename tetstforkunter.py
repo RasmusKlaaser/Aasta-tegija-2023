@@ -617,12 +617,26 @@ class Question1(tk.Frame):
         L1.pack(pady=0, padx=0)
         L1.place(bordermode="outside", height=130, width=1710, x=105, y=105)
 
-        L2 = tk.Label(C, text="faa", bg="#2a3698", fg="yellow", font=("Impact", 50))
+        L2 = tk.Label(C, text="question1", bg="#2a3698", fg="yellow", font=("Impact", 50))
 
         L2.pack(padx=0, pady=0)
-        L2.place(bordermode="outside", height=260, width=1710, x=105, y=235)
+        L2.place(bordermode="outside", height=260, width=600, x=655, y=300)
+        def print_selection():
+            if (var1.get() == 1) & (var2.get() == 0):
+                L1.config(text="vastus1")
+            elif (var1.get() == 0) & (var2.get() == 1):
+                L1.config(text="vastus2")
+            elif (var1.get() == 0) & (var2.get() == 0):
+                L1.config(text="vastus3")
+            else:
+                L1.config(text="vastus4")
+
+        var1 = tk.IntVar()
+        var2 = tk.IntVar()
+
 
         C.pack(fill="both", expand=True)
+
 
 class PointSum1(tk.Frame):
     def __init__(self, parent, controller):
