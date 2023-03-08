@@ -52,7 +52,7 @@ class Vocovillak(tk.Tk):
 
         # iterating through a tuple consisting
         # of the different page layouts
-        for F in (StartPage, Job, Dice1, Dice2, Game1, Game2, Question1):
+        for F in (StartPage, Job, Dice1, Dice2, Game1, Game2, Question1, PointSum1):
             frame = F(container, self)
 
             # initializing frame of that object from
@@ -73,7 +73,7 @@ class Vocovillak(tk.Tk):
     def show_frame_reset(self, cont):
         frame = self.frames[cont]
         frame.tkraise()
-        B2['state'] = tk.NORMAL
+        B2['state'] = tk.DISABLED
 
 
 #The start page.
@@ -623,31 +623,21 @@ class Question1(tk.Frame):
         L2.place(bordermode="outside", height=260, width=1710, x=105, y=235)
 
         C.pack(fill="both", expand=True)
-        result = 0
 
+class PointSum1(tk.Frame):
+    def __init__(self, parent, controller):
+        tk.Frame.__init__(self, parent)
 
         C = tk.Canvas(self, bg="dark blue", height=1080, width=1920)
 
-        rectangle = C.create_rectangle(100, 980, 1820, 100, width=10, outline="gold", fill="#2a3698")
+        rectangle = C.create_rectangle(100, 980, 1820, 100, width=10, outline="gold")
 
-        rectangle = C.create_rectangle(755, 480, 1165, 300, width=10, outline="gold", fill="black")
+        B2 = tk.Button(C, text="Edasi >>>", bg="#2a3698", fg="yellow", activebackground="#3d4dd2", font=("Impact", 35), command=lambda: controller.show_frame_reset(Dice1))
 
+        B2.pack(pady=0, padx=0)
+        B2.place(bordermode="outside", height=100, width=250, x=1565, y=875)
 
-#class PointSum1:
-  #  def __init__(self, parent, controller):
- #       tk.Frame.__init__(self, parent)
-
-   #     C = tk.Canvas(self, bg="dark blue", height=1080, width=1920)
-
-    #    C.pack(fill="both", expand=True)
-
-#class PointSum2:
- #   def __init__(self, parent, controller):
-  #      tk.Frame.__init__(self, parent)
-
-   #     C = tk.Canvas(self, bg="dark blue", height=1080, width=1920)
-
-    #    C.pack(fill="both", expand=True)
+        C.pack(fill="both", expand=True)
 
 app = Vocovillak()
 app.mainloop()
