@@ -16,6 +16,10 @@ for i in numgen():
     final_num = list1[0]
     print(final_num)
 
+    # viska see final num faili
+
+
+
 question_hob_1 = ["Kas VOCO-s on tasuta jõusaal?   (JAH/EI)", "JAH", 100]
 questions_hob_4 = ["Koolis on Improring.   (ÕIGE/VALE)", "ÕIGE", 400]
 questions_hob_5 = ["Väiketehnika ringi on tehnikahuvilised, kelle sooviks on ehitada võistlusmasinad ja lisaks ka nendega kestvussõidu võistlustel osaleda.   (ÕIGE/VALE)", "ÕIGE", 500]
@@ -108,6 +112,7 @@ class StartPage(tk.Frame):
         B.pack()
         B.place(bordermode="outside", height=200, width=500, x=700, y=700)
 
+
         #Makes the title of the game.
         L = tk.Label(C, text="VOCO-VILLAK", fg="gold", bg="#2a3698", font=("Impact", 80))
 
@@ -150,6 +155,8 @@ class Dice1(tk.Frame):
         tk.Frame.__init__(self, parent)
         result = 0
         def Diceroll1():
+            global final_num
+            final_num = numgen()[0]
             result = final_num
             if B2['state'] == tk.NORMAL:
                 B2['state'] = tk.DISABLED
@@ -191,6 +198,8 @@ class Dice2(tk.Frame):
         tk.Frame.__init__(self, parent)
         result = 0
         def Diceroll2():
+            global final_num
+            final_num = numgen()[0]
             result = final_num
             if B2['state'] == tk.NORMAL:
                 B2['state'] = tk.DISABLED
@@ -230,7 +239,7 @@ class Dice2(tk.Frame):
 class Game1(tk.Frame):
     def __init__(self, parent, controller):
         tk.Frame.__init__(self, parent)
-
+        global final_num
         #The main shape of the question board.
         C = tk.Canvas(self, bg="dark blue", height=1080, width=1920)
 
@@ -638,7 +647,7 @@ class Question1(tk.Frame):
         L1.pack(pady=0, padx=0)
         L1.place(bordermode="outside", height=130, width=1710, x=105, y=105)
 
-        L2 = tk.Label(C, text="question1", bg="#2a3698", fg="yellow", font=("Impact", 50))
+        L2 = tk.Label(C, text="The Question:", bg="#2a3698", fg="yellow", font=("Impact", 50))
 
         L2.pack(padx=0, pady=0)
         L2.place(bordermode="outside", height=260, width=600, x=655, y=300)
