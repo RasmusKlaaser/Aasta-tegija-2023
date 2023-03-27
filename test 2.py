@@ -16,10 +16,6 @@ for i in numgen():
     final_num = list1[0]
     print(final_num)
 
-    # viska see final num faili
-
-
-
 question_hob_1 = ["Kas VOCO-s on tasuta jõusaal?   (JAH/EI)", "JAH", 100]
 questions_hob_4 = ["Koolis on Improring.   (ÕIGE/VALE)", "ÕIGE", 400]
 questions_hob_5 = ["Väiketehnika ringi on tehnikahuvilised, kelle sooviks on ehitada võistlusmasinad ja lisaks ka nendega kestvussõidu võistlustel osaleda.   (ÕIGE/VALE)", "ÕIGE", 500]
@@ -155,8 +151,6 @@ class Dice1(tk.Frame):
         tk.Frame.__init__(self, parent)
         result = 0
         def Diceroll1():
-            global final_num
-            final_num = numgen()[0]
             result = final_num
             if B2['state'] == tk.NORMAL:
                 B2['state'] = tk.DISABLED
@@ -198,8 +192,6 @@ class Dice2(tk.Frame):
         tk.Frame.__init__(self, parent)
         result = 0
         def Diceroll2():
-            global final_num
-            final_num = numgen()[0]
             result = final_num
             if B2['state'] == tk.NORMAL:
                 B2['state'] = tk.DISABLED
@@ -239,7 +231,7 @@ class Dice2(tk.Frame):
 class Game1(tk.Frame):
     def __init__(self, parent, controller):
         tk.Frame.__init__(self, parent)
-        global final_num
+
         #The main shape of the question board.
         C = tk.Canvas(self, bg="dark blue", height=1080, width=1920)
 
@@ -679,6 +671,10 @@ class PointSum1(tk.Frame):
         L1.place(bordermode="outside", height=130, width=1710, x=105, y=105)
 
         C.pack(fill="both", expand=True)
+
+        L2 = tk.Label(C, text="current score:", bg="#2a3698", fg="yellow", font=("Impact", 70))
+        L2.pack(padx=0, pady=0)
+        L2.place(bordermode="outside", height=360, width=1000, x=465, y=300)
 
 
 class Gameend(tk.Frame):
