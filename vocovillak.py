@@ -19,6 +19,8 @@ for i in numgen():
     final_num = list1[0]
     print(final_num)
 
+
+
 question_hob_1 = ["Kas VOCO-s on tasuta jõusaal?   (JAH/EI)", "JAH", 100]
 questions_hob_4 = ["Koolis on Improring.   (ÕIGE/VALE)", "ÕIGE", 400]
 questions_hob_5 = [
@@ -169,8 +171,10 @@ class Dice1(tk.Frame):
             result = final_num
             if B2['state'] == tk.NORMAL:
                 B2['state'] = tk.DISABLED
+                B1['state'] = tk.DISABLED
             else:
                 B2['state'] = tk.NORMAL
+                B1['state'] = tk.DISABLED
             L2['text'] = result
 
         def Cmd1():
@@ -178,6 +182,10 @@ class Dice1(tk.Frame):
                 B2['state'] = tk.DISABLED
             else:
                 B2['state'] = tk.NORMAL
+            if B1['state'] == tk.NORMAL:
+                B1['state'] = tk.DISABLED
+            else:
+                B1['state'] = tk.NORMAL
 
         C = tk.Canvas(self, bg="dark blue", height=1080, width=1920)
 
