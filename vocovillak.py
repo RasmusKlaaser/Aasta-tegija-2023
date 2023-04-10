@@ -8,7 +8,6 @@ row2 = 200
 row3 = 300
 row4 = 400
 row5 = 500
-point_total = 0
 
 def numgen():
     list0 = []
@@ -30,14 +29,16 @@ for i in numgen():
 question_hob_1 = ["Kas VOCO-s on tasuta jõusaal?   (JAH/EI)", "JAH", 100]
 questions_hob_4 = ["Koolis on Improring.   (ÕIGE/VALE)", "ÕIGE", 400]
 questions_hob_5 = [
-    "Väiketehnika ringi on tehnikahuvilised, kelle sooviks on ehitada võistlusmasinad ja lisaks ka nendega kestvussõidu võistlustel osaleda.   (ÕIGE/VALE)",
+    "Väiketehnika ringi on tehnikahuvilised, kelle sooviks on ehitada võistlusmasinad ja lisaks \n"
+    "ka nendega kestvussõidu võistlustel osaleda.   (ÕIGE/VALE)",
     "ÕIGE", 500]
 questions_ope_3 = ["Kas VOCO-s on õpiränded tasuta?   (JAH/EI)", "JAH", 300]
 questions_ope_4 = ["Kas praktikakohast võib kujuneda esimene ja kindel töökoht.   (KINDLASTI/PIGEM MITTE)", "KINDLASTI",
                    400]
 questions_ope_5 = ["VOCO-s on tunniplaan üksluine.  (ÕIGE/VALE SEE MUUTUB IGA NÄDAL)", "VALE SEE MUUTUB IGA NÄDAL", 500]
 questions_voco_1 = [
-    "Kas Tartu Rakenduslikus Kolledžis omandad koos tööalaste praktiliste oskustega nii kutse kui keskhariduse.  (JAH/EI)",
+    "Kas Tartu Rakenduslikus Kolledžis omandad koos tööalaste praktiliste oskustega \n"
+    " nii kutse kui keskhariduse.  (JAH/EI)",
     "JAH", 100]
 questions_voco_3 = ["Kas Tartu Rakenduslik Kolledž toetab õpilaste osalemist kutsevõistlustel.  (KINDLASTI MITTE/JAH)",
                     "JAH", 300]
@@ -50,27 +51,32 @@ questions_voco_5 = ["Mis on Voco oma enda e-päeviku nimi?  (E-KOOL/STUUDIUM/SIS
 question_4_2 = ["Mida tähendab lühend IT?   (FILM/INFO-TEADUS/INFO-TEHNOLOOGIA)", "INFO-TEHNOLOOGIA", 400]
 
 question_1 = [
-    "Kas selle erialaga saab olulise eelise õpigute jätkamiseks kõrgkoolis ja võib spetsialiseeruda IT valdkonna profiks?    (JAH/EI)",
+    "Kas selle erialaga saab olulise eelise õpigute jätkamiseks kõrgkoolis ja võib spetsialiseeruda \n"
+    "IT valdkonna profiks?    (JAH/EI)",
     "JAH", 100]
 question_2 = ["Milline eriala on eriliselt kiiresti kasvav ja maailma tulevik?     (TARKVARAARENDJA/VEEBIHALDUR)",
               "TARKVARAARENDAJA", 200]
 question_3 = [
-    "Tegu on globaalse kasvava ettevõtlusvaldkonnaga, kus heade spetsialistide järele on pidevalt suur nõudlus, mistõttu tarkvaraarendaja leiab hõlpsasti tööd ka väljaspool Eestit.      (ÕIGE/VALE)",
+    "Tegu on globaalse kasvava ettevõtlusvaldkonnaga, kus heade spetsialistide järele on pidevalt\n"
+    "suur nõudlus, mistõttu tarkvaraarendaja leiab hõlpsasti tööd ka väljaspool Eestit.      (ÕIGE/VALE)",
     "õige", 300]
 question_4 = ["Tarkvaraarendajad saavad töötada vähestes valdkondades.    (ÕIGE/VALE)", "VALE", 400]
 question_5 = [
-    "Eesti IT-sektoris on palgatase keskmisest kõrgem ning tarkvaraarendaja töötasu alumine määr võib ületada Eesti keskmise töötasu. (ÕIGE/VALE)",
+    "Eesti IT-sektoris on palgatase keskmisest kõrgem ning tarkvaraarendaja töötasu alumine määr võib \n"
+    "ületada Eesti keskmise töötasu. (ÕIGE/VALE)",
     "õige", 500]
 
 question_1_2 = [
-    "Kas IT-süsteemide spetsialist saab tööle IT-süsteemide spetsialistina või klienditoespetsialistina?    (SPETSIALIST/KLIENDITUGI)",
+    "Kas IT-süsteemide spetsialist saab tööle IT-süsteemide spetsialistina või klienditoespetsialistina? \n"
+    " (SPETSIALIST/KLIENDITUGI)",
     "SPETSIALIST", 100]
 question_2_2 = ["Kas tegu on ettevõttevaldkonnaga, kus spetsialistie järele on väike nõudlus?    (JAH/EI)", "EI", 200]
 question_3_2 = ["Kas IT-spetsialist haldab arvutivõrke, telefoniteenuseid ja vajadusel ehitab müüri?      (JAH/EI)",
                 "EI", 300]
 # line 33
 question_5_2 = [
-    "Milliseid võtmeoskusi on vaja edukaks IT-spetsialisti karjääriks?  (ERINEVATE ARVUTIKEELTE TUNDMINE/INVESTEERIMINE/LOOGILINE MÕTLEMINE)",
+    "Milliseid võtmeoskusi on vaja edukaks IT-spetsialisti karjääriks? \n"
+    " (ERINEVATE ARVUTIKEELTE TUNDMINE/INVESTEERIMINE/LOOGILINE MÕTLEMINE)",
     "LOOGILINE MÕTLEMINE", 500]
 
 
@@ -347,7 +353,7 @@ class Game1(tk.Frame):
 
         B7 = tk.Button(C, state=tk.DISABLED, text=200, bg="#2a3698", fg="white", activebackground="#3d4dd2",
                        font=("Impact", 45),
-                       command=lambda: controller.show_frame(Question2))
+                       command=lambda: controller.show_frame(question_2))
         B7.pack(pady=0, padx=0)
         B7.place(bordermode="outside", height=140, width=405, x=545, y=395)
 
