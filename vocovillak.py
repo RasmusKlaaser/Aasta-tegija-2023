@@ -3,6 +3,12 @@ import random
 
 point_total = 0
 
+row1 = 100
+row2 = 200
+row3 = 300
+row4 = 400
+row5 = 500
+point_total = 0
 
 def numgen():
     list0 = []
@@ -762,6 +768,10 @@ class PointSum1(tk.Frame):
 
         L1.pack(pady=0, padx=0)
         L1.place(bordermode="outside", height=130, width=1710, x=105, y=105)
+        
+        L2 = tk.Label(C, text="current score:", bg="#2a3698", fg="yellow", font=("Impact", 70))
+        L2.pack(padx=0, pady=0)
+        L2.place(bordermode="outside", height=360, width=1000, x=465, y=300)
 
         C.pack(fill="both", expand=True)
 
