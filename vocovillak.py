@@ -47,7 +47,10 @@ class Vocovillak(tk.Tk):
 
         # iterating through a tuple consisting
         # of the different page layouts
-        for F in (StartPage, Job, Dice1, Dice2, Game1, Game2, Question1, Question2, Question3, Question4, PointSum1):
+        for F in (StartPage, Job, Dice1, Dice2, Game1, Game2, Question1,  Question2,  Question3,  Question4,  Question5,
+                  Question6,  Question7,  Question8,  Question9,  Question10,  Question11,  Question12,  Question13,
+                  Question14,  Question15,  Question16,  Question17,  Question18,  Question19,  Question20,
+                  Question21,  Question22,  Question23,  Question24,  Question25, PointSum1):
             frame = F(container, self)
 
             # initializing frame of that object from
@@ -679,7 +682,7 @@ class Question1(tk.Frame):
         L1.pack(pady=0, padx=0)
         L1.place(bordermode="outside", height=130, width=1710, x=105, y=105)
 
-        L2 = tk.Label(C, text="question1", bg="#2a3698", fg="yellow", font=("Impact", 50))
+        L2 = tk.Label(C, text="Kas VOCO-s on tasuta jõusaal?", bg="#2a3698", fg="yellow", font=("Impact", 50))
 
         L2.pack(padx=0, pady=0)
         L2.place(bordermode="outside", height=260, width=600, x=655, y=300)
@@ -688,9 +691,9 @@ class Question1(tk.Frame):
 
         CheckVar1 = tk.IntVar()
         CheckVar2 = tk.IntVar()
-        C1 = tk.Checkbutton(C, text="Vastus 1", bg="#2a3698", font=("Impact", 50), variable=CheckVar1, onvalue=1,
+        C1 = tk.Checkbutton(C, text="Jah", bg="#2a3698", font=("Impact", 50), variable=CheckVar1, onvalue=1,
                             offvalue=0, height=5, width=20, command=lambda: [Rightanswer(), Action2()])
-        C2 = tk.Checkbutton(C, text="Vastus 2", bg="#2a3698", font=("Impact", 50), variable=CheckVar2, onvalue=1,
+        C2 = tk.Checkbutton(C, text="Ei", bg="#2a3698", font=("Impact", 50), variable=CheckVar2, onvalue=1,
                             offvalue=0, height=5, width=20, command=lambda: [Wronganswer(), Action2()])
 
         C1.pack()
@@ -760,7 +763,7 @@ class Question2(tk.Frame):
         L1.pack(pady=0, padx=0)
         L1.place(bordermode="outside", height=130, width=1710, x=105, y=105)
 
-        L2 = tk.Label(C, text="question1", bg="#2a3698", fg="yellow", font=("Impact", 50))
+        L2 = tk.Label(C, text="Koolis on Improring", bg="#2a3698", fg="yellow", font=("Impact", 50))
 
         L2.pack(padx=0, pady=0)
         L2.place(bordermode="outside", height=260, width=600, x=655, y=300)
@@ -769,10 +772,10 @@ class Question2(tk.Frame):
 
         CheckVar1 = tk.IntVar()
         CheckVar2 = tk.IntVar()
-        C1 = tk.Checkbutton(C, text="Vastus 1", bg="#2a3698", font=("Impact", 50), variable=CheckVar1, onvalue=1,
-                            offvalue=0, height=5, width=20, command=lambda: [Rightanswer(), Action2()])
-        C2 = tk.Checkbutton(C, text="Vastus 2", bg="#2a3698", font=("Impact", 50), variable=CheckVar2, onvalue=1,
+        C1 = tk.Checkbutton(C, text="Vale", bg="#2a3698", font=("Impact", 50), variable=CheckVar1, onvalue=1,
                             offvalue=0, height=5, width=20, command=lambda: [Wronganswer(), Action2()])
+        C2 = tk.Checkbutton(C, text="Õige", bg="#2a3698", font=("Impact", 50), variable=CheckVar2, onvalue=1,
+                            offvalue=0, height=5, width=20, command=lambda: [Rightanswer(), Action2()])
 
         C1.pack()
         C2.pack()
@@ -841,7 +844,9 @@ class Question3(tk.Frame):
         L1.pack(pady=0, padx=0)
         L1.place(bordermode="outside", height=130, width=1710, x=105, y=105)
 
-        L2 = tk.Label(C, text="question1", bg="#2a3698", fg="yellow", font=("Impact", 50))
+        L2 = tk.Label(C, text="Väiketehnika ringi on tehnikahuvilised, kelle sooviks on ehitada võistlusmasinad \n"
+                              " ja lisaks ka nendega kestvussõidu võistlustel osaleda", bg="#2a3698", fg="yellow",
+                      font=("Impact", 50))
 
         L2.pack(padx=0, pady=0)
         L2.place(bordermode="outside", height=260, width=600, x=655, y=300)
@@ -850,9 +855,9 @@ class Question3(tk.Frame):
 
         CheckVar1 = tk.IntVar()
         CheckVar2 = tk.IntVar()
-        C1 = tk.Checkbutton(C, text="Vastus 1", bg="#2a3698", font=("Impact", 50), variable=CheckVar1, onvalue=1,
+        C1 = tk.Checkbutton(C, text="Õige", bg="#2a3698", font=("Impact", 50), variable=CheckVar1, onvalue=1,
                             offvalue=0, height=5, width=20, command=lambda: [Rightanswer(), Action2()])
-        C2 = tk.Checkbutton(C, text="Vastus 2", bg="#2a3698", font=("Impact", 50), variable=CheckVar2, onvalue=1,
+        C2 = tk.Checkbutton(C, text="Vale", bg="#2a3698", font=("Impact", 50), variable=CheckVar2, onvalue=1,
                             offvalue=0, height=5, width=20, command=lambda: [Wronganswer(), Action2()])
 
         C1.pack()
@@ -922,7 +927,7 @@ class Question4(tk.Frame):
         L1.pack(pady=0, padx=0)
         L1.place(bordermode="outside", height=130, width=1710, x=105, y=105)
 
-        L2 = tk.Label(C, text="question1", bg="#2a3698", fg="yellow", font=("Impact", 50))
+        L2 = tk.Label(C, text="Kas VOCO-s on õpiränded tasuta?", bg="#2a3698", fg="yellow", font=("Impact", 50))
 
         L2.pack(padx=0, pady=0)
         L2.place(bordermode="outside", height=260, width=600, x=655, y=300)
@@ -931,10 +936,1332 @@ class Question4(tk.Frame):
 
         CheckVar1 = tk.IntVar()
         CheckVar2 = tk.IntVar()
-        C1 = tk.Checkbutton(C, text="Vastus 1", bg="#2a3698", font=("Impact", 50), variable=CheckVar1, onvalue=1,
-                            offvalue=0, height=5, width=20, command=lambda: [Rightanswer(), Action2()])
-        C2 = tk.Checkbutton(C, text="Vastus 2", bg="#2a3698", font=("Impact", 50), variable=CheckVar2, onvalue=1,
+        C1 = tk.Checkbutton(C, text="Ei", bg="#2a3698", font=("Impact", 50), variable=CheckVar1, onvalue=1,
                             offvalue=0, height=5, width=20, command=lambda: [Wronganswer(), Action2()])
+        C2 = tk.Checkbutton(C, text="Jah", bg="#2a3698", font=("Impact", 50), variable=CheckVar2, onvalue=1,
+                            offvalue=0, height=5, width=20, command=lambda: [Rightanswer(), Action2()])
+
+        C1.pack()
+        C2.pack()
+
+        C1.place(bordermode="outside", height=130, width=350, x=600, y=600)
+        C2.place(bordermode="outside", height=130, width=350, x=960, y=600)
+
+        C.pack(fill="both", expand=True)
+
+
+class Question5(tk.Frame):
+    def __init__(self, parent, controller):
+        tk.Frame.__init__(self, parent)
+
+        def Rightanswer():
+            global point_total
+            point_total += 100
+
+        def Wronganswer():
+            global point_total
+            point_total -= 100
+
+        def Answer():
+            if B2['state'] == tk.NORMAL:
+                B2['state'] = tk.DISABLED
+                B1['state'] = tk.DISABLED
+            else:
+                B2['state'] = tk.NORMAL
+                B1['state'] = tk.DISABLED
+
+        def Action1():
+            if C2['state'] == tk.NORMAL:
+                C2['state'] = tk.DISABLED
+            else:
+                C2['state'] = tk.NORMAL
+            if C1['state'] == tk.NORMAL:
+                C1['state'] = tk.DISABLED
+            else:
+                C1['state'] = tk.NORMAL
+
+        def Action2():
+            if B1['state'] == tk.NORMAL:
+                B1['state'] = tk.DISABLED
+            else:
+                B1['state'] = tk.NORMAL
+
+        # Creates board
+        C = tk.Canvas(self, bg="dark blue", height=1080, width=1920)
+
+        C.create_rectangle(100, 980, 1820, 100, width=10, outline="gold")
+
+        B1 = tk.Button(C, state=tk.DISABLED, text="Vasta", bg="#2a3698", fg="white", activebackground="#3d4dd2",
+                       font=("Impact", 45), command=lambda: [Answer(), Action1()])
+
+        B1.pack(pady=0, padx=0)
+        B1.place(bordermode="outside", height=140, width=405, x=755, y=835)
+
+        B2 = tk.Button(C, state=tk.DISABLED, text="Edasi >>>", bg="#2a3698", fg="yellow", activebackground="#3d4dd2",
+                       font=("Impact", 35), command=lambda: controller.show_frame(PointSum1))
+
+        B2.pack(pady=0, padx=0)
+        B2.place(bordermode="outside", height=100, width=250, x=1565, y=875)
+
+        L1 = tk.Label(C, text="Vasta küsimusele!", bg="#2a3698", fg="white", font=("Impact", 50))
+
+        L1.pack(pady=0, padx=0)
+        L1.place(bordermode="outside", height=130, width=1710, x=105, y=105)
+
+        L2 = tk.Label(C, text="Kas praktikakohast võib kujuneda \n"
+                              " esimene ja kindel töökoht.", bg="#2a3698", fg="yellow", font=("Impact", 50))
+
+        L2.pack(padx=0, pady=0)
+        L2.place(bordermode="outside", height=260, width=600, x=655, y=300)
+
+        # creating checkboxes
+
+        CheckVar1 = tk.IntVar()
+        CheckVar2 = tk.IntVar()
+        C1 = tk.Checkbutton(C, text="Jah", bg="#2a3698", font=("Impact", 50), variable=CheckVar1, onvalue=1,
+                            offvalue=0, height=5, width=20, command=lambda: [Rightanswer(), Action2()])
+        C2 = tk.Checkbutton(C, text="Ei", bg="#2a3698", font=("Impact", 50), variable=CheckVar2, onvalue=1,
+                            offvalue=0, height=5, width=20, command=lambda: [Wronganswer(), Action2()])
+
+        C1.pack()
+        C2.pack()
+
+        C1.place(bordermode="outside", height=130, width=350, x=600, y=600)
+        C2.place(bordermode="outside", height=130, width=350, x=960, y=600)
+
+        C.pack(fill="both", expand=True)
+
+
+class Question6(tk.Frame):
+    def __init__(self, parent, controller):
+        tk.Frame.__init__(self, parent)
+
+        def Rightanswer():
+            global point_total
+            point_total += 100
+
+        def Wronganswer():
+            global point_total
+            point_total -= 100
+
+        def Answer():
+            if B2['state'] == tk.NORMAL:
+                B2['state'] = tk.DISABLED
+                B1['state'] = tk.DISABLED
+            else:
+                B2['state'] = tk.NORMAL
+                B1['state'] = tk.DISABLED
+
+        def Action1():
+            if C2['state'] == tk.NORMAL:
+                C2['state'] = tk.DISABLED
+            else:
+                C2['state'] = tk.NORMAL
+            if C1['state'] == tk.NORMAL:
+                C1['state'] = tk.DISABLED
+            else:
+                C1['state'] = tk.NORMAL
+
+        def Action2():
+            if B1['state'] == tk.NORMAL:
+                B1['state'] = tk.DISABLED
+            else:
+                B1['state'] = tk.NORMAL
+
+        # Creates board
+        C = tk.Canvas(self, bg="dark blue", height=1080, width=1920)
+
+        C.create_rectangle(100, 980, 1820, 100, width=10, outline="gold")
+
+        B1 = tk.Button(C, state=tk.DISABLED, text="Vasta", bg="#2a3698", fg="white", activebackground="#3d4dd2",
+                       font=("Impact", 45), command=lambda: [Answer(), Action1()])
+
+        B1.pack(pady=0, padx=0)
+        B1.place(bordermode="outside", height=140, width=405, x=755, y=835)
+
+        B2 = tk.Button(C, state=tk.DISABLED, text="Edasi >>>", bg="#2a3698", fg="yellow", activebackground="#3d4dd2",
+                       font=("Impact", 35), command=lambda: controller.show_frame(PointSum1))
+
+        B2.pack(pady=0, padx=0)
+        B2.place(bordermode="outside", height=100, width=250, x=1565, y=875)
+
+        L1 = tk.Label(C, text="Vasta küsimusele!", bg="#2a3698", fg="white", font=("Impact", 50))
+
+        L1.pack(pady=0, padx=0)
+        L1.place(bordermode="outside", height=130, width=1710, x=105, y=105)
+
+        L2 = tk.Label(C, text="VOCO-s on tunniplaan üksluine.", bg="#2a3698", fg="yellow", font=("Impact", 50))
+
+        L2.pack(padx=0, pady=0)
+        L2.place(bordermode="outside", height=260, width=600, x=655, y=300)
+
+        # creating checkboxes
+
+        CheckVar1 = tk.IntVar()
+        CheckVar2 = tk.IntVar()
+        C1 = tk.Checkbutton(C, text="Vale, see muutub iga nädal", bg="#2a3698", font=("Impact", 50), variable=CheckVar1,
+                            onvalue=1,
+                            offvalue=0, height=5, width=20, command=lambda: [Rightanswer(), Action2()])
+        C2 = tk.Checkbutton(C, text="Õige", bg="#2a3698", font=("Impact", 50), variable=CheckVar2, onvalue=1,
+                            offvalue=0, height=5, width=20, command=lambda: [Wronganswer(), Action2()])
+
+        C1.pack()
+        C2.pack()
+
+        C1.place(bordermode="outside", height=130, width=350, x=600, y=600)
+        C2.place(bordermode="outside", height=130, width=350, x=960, y=600)
+
+        C.pack(fill="both", expand=True)
+
+
+class Question7(tk.Frame):
+    def __init__(self, parent, controller):
+        tk.Frame.__init__(self, parent)
+
+        def Rightanswer():
+            global point_total
+            point_total += 100
+
+        def Wronganswer():
+            global point_total
+            point_total -= 100
+
+        def Answer():
+            if B2['state'] == tk.NORMAL:
+                B2['state'] = tk.DISABLED
+                B1['state'] = tk.DISABLED
+            else:
+                B2['state'] = tk.NORMAL
+                B1['state'] = tk.DISABLED
+
+        def Action1():
+            if C2['state'] == tk.NORMAL:
+                C2['state'] = tk.DISABLED
+            else:
+                C2['state'] = tk.NORMAL
+            if C1['state'] == tk.NORMAL:
+                C1['state'] = tk.DISABLED
+            else:
+                C1['state'] = tk.NORMAL
+
+        def Action2():
+            if B1['state'] == tk.NORMAL:
+                B1['state'] = tk.DISABLED
+            else:
+                B1['state'] = tk.NORMAL
+
+        # Creates board
+        C = tk.Canvas(self, bg="dark blue", height=1080, width=1920)
+
+        C.create_rectangle(100, 980, 1820, 100, width=10, outline="gold")
+
+        B1 = tk.Button(C, state=tk.DISABLED, text="Vasta", bg="#2a3698", fg="white", activebackground="#3d4dd2",
+                       font=("Impact", 45), command=lambda: [Answer(), Action1()])
+
+        B1.pack(pady=0, padx=0)
+        B1.place(bordermode="outside", height=140, width=405, x=755, y=835)
+
+        B2 = tk.Button(C, state=tk.DISABLED, text="Edasi >>>", bg="#2a3698", fg="yellow", activebackground="#3d4dd2",
+                       font=("Impact", 35), command=lambda: controller.show_frame(PointSum1))
+
+        B2.pack(pady=0, padx=0)
+        B2.place(bordermode="outside", height=100, width=250, x=1565, y=875)
+
+        L1 = tk.Label(C, text="Vasta küsimusele!", bg="#2a3698", fg="white", font=("Impact", 50))
+
+        L1.pack(pady=0, padx=0)
+        L1.place(bordermode="outside", height=130, width=1710, x=105, y=105)
+
+        L2 = tk.Label(C, text="Kas Tartu Rakenduslikus Kolledžis omandad koos tööalaste \n"
+                              " praktiliste oskustega nii kutse kui keskhariduse", bg="#2a3698", fg="yellow",
+                      font=("Impact", 50))
+
+        L2.pack(padx=0, pady=0)
+        L2.place(bordermode="outside", height=260, width=600, x=655, y=300)
+
+        # creating checkboxes
+
+        CheckVar1 = tk.IntVar()
+        CheckVar2 = tk.IntVar()
+        C1 = tk.Checkbutton(C, text="Jah", bg="#2a3698", font=("Impact", 50), variable=CheckVar1, onvalue=1,
+                            offvalue=0, height=5, width=20, command=lambda: [Rightanswer(), Action2()])
+        C2 = tk.Checkbutton(C, text="Ei", bg="#2a3698", font=("Impact", 50), variable=CheckVar2, onvalue=1,
+                            offvalue=0, height=5, width=20, command=lambda: [Wronganswer(), Action2()])
+
+        C1.pack()
+        C2.pack()
+
+        C1.place(bordermode="outside", height=130, width=350, x=600, y=600)
+        C2.place(bordermode="outside", height=130, width=350, x=960, y=600)
+
+        C.pack(fill="both", expand=True)
+
+
+class Question8(tk.Frame):
+    def __init__(self, parent, controller):
+        tk.Frame.__init__(self, parent)
+
+        def Rightanswer():
+            global point_total
+            point_total += 100
+
+        def Wronganswer():
+            global point_total
+            point_total -= 100
+
+        def Answer():
+            if B2['state'] == tk.NORMAL:
+                B2['state'] = tk.DISABLED
+                B1['state'] = tk.DISABLED
+            else:
+                B2['state'] = tk.NORMAL
+                B1['state'] = tk.DISABLED
+
+        def Action1():
+            if C2['state'] == tk.NORMAL:
+                C2['state'] = tk.DISABLED
+            else:
+                C2['state'] = tk.NORMAL
+            if C1['state'] == tk.NORMAL:
+                C1['state'] = tk.DISABLED
+            else:
+                C1['state'] = tk.NORMAL
+
+        def Action2():
+            if B1['state'] == tk.NORMAL:
+                B1['state'] = tk.DISABLED
+            else:
+                B1['state'] = tk.NORMAL
+
+        # Creates board
+        C = tk.Canvas(self, bg="dark blue", height=1080, width=1920)
+
+        C.create_rectangle(100, 980, 1820, 100, width=10, outline="gold")
+
+        B1 = tk.Button(C, state=tk.DISABLED, text="Vasta", bg="#2a3698", fg="white", activebackground="#3d4dd2",
+                       font=("Impact", 45), command=lambda: [Answer(), Action1()])
+
+        B1.pack(pady=0, padx=0)
+        B1.place(bordermode="outside", height=140, width=405, x=755, y=835)
+
+        B2 = tk.Button(C, state=tk.DISABLED, text="Edasi >>>", bg="#2a3698", fg="yellow", activebackground="#3d4dd2",
+                       font=("Impact", 35), command=lambda: controller.show_frame(PointSum1))
+
+        B2.pack(pady=0, padx=0)
+        B2.place(bordermode="outside", height=100, width=250, x=1565, y=875)
+
+        L1 = tk.Label(C, text="Vasta küsimusele!", bg="#2a3698", fg="white", font=("Impact", 50))
+
+        L1.pack(pady=0, padx=0)
+        L1.place(bordermode="outside", height=130, width=1710, x=105, y=105)
+
+        L2 = tk.Label(C, text="Kas Tartu Rakenduslik Kolledž toetab \n "
+                              "õpilaste osalemist kutsevõistlustel.", bg="#2a3698", fg="yellow", font=("Impact", 50))
+
+        L2.pack(padx=0, pady=0)
+        L2.place(bordermode="outside", height=260, width=600, x=655, y=300)
+
+        # creating checkboxes
+
+        CheckVar1 = tk.IntVar()
+        CheckVar2 = tk.IntVar()
+        C1 = tk.Checkbutton(C, text="Kindlasti mitte", bg="#2a3698", font=("Impact", 50), variable=CheckVar1, onvalue=1,
+                            offvalue=0, height=5, width=20, command=lambda: [Wronganswer(), Action2()])
+        C2 = tk.Checkbutton(C, text="Jah", bg="#2a3698", font=("Impact", 50), variable=CheckVar2, onvalue=1,
+                            offvalue=0, height=5, width=20, command=lambda: [Rightanswer(), Action2()])
+
+        C1.pack()
+        C2.pack()
+
+        C1.place(bordermode="outside", height=130, width=350, x=600, y=600)
+        C2.place(bordermode="outside", height=130, width=350, x=960, y=600)
+
+        C.pack(fill="both", expand=True)
+
+
+class Question9(tk.Frame):
+    def __init__(self, parent, controller):
+        tk.Frame.__init__(self, parent)
+
+        def Rightanswer():
+            global point_total
+            point_total += 100
+
+        def Wronganswer():
+            global point_total
+            point_total -= 100
+
+        def Answer():
+            if B2['state'] == tk.NORMAL:
+                B2['state'] = tk.DISABLED
+                B1['state'] = tk.DISABLED
+            else:
+                B2['state'] = tk.NORMAL
+                B1['state'] = tk.DISABLED
+
+        def Action1():
+            if C2['state'] == tk.NORMAL:
+                C2['state'] = tk.DISABLED
+            else:
+                C2['state'] = tk.NORMAL
+            if C1['state'] == tk.NORMAL:
+                C1['state'] = tk.DISABLED
+            else:
+                C1['state'] = tk.NORMAL
+
+        def Action2():
+            if B1['state'] == tk.NORMAL:
+                B1['state'] = tk.DISABLED
+            else:
+                B1['state'] = tk.NORMAL
+
+        # Creates board
+        C = tk.Canvas(self, bg="dark blue", height=1080, width=1920)
+
+        C.create_rectangle(100, 980, 1820, 100, width=10, outline="gold")
+
+        B1 = tk.Button(C, state=tk.DISABLED, text="Vasta", bg="#2a3698", fg="white", activebackground="#3d4dd2",
+                       font=("Impact", 45), command=lambda: [Answer(), Action1()])
+
+        B1.pack(pady=0, padx=0)
+        B1.place(bordermode="outside", height=140, width=405, x=755, y=835)
+
+        B2 = tk.Button(C, state=tk.DISABLED, text="Edasi >>>", bg="#2a3698", fg="yellow", activebackground="#3d4dd2",
+                       font=("Impact", 35), command=lambda: controller.show_frame(PointSum1))
+
+        B2.pack(pady=0, padx=0)
+        B2.place(bordermode="outside", height=100, width=250, x=1565, y=875)
+
+        L1 = tk.Label(C, text="Vasta küsimusele!", bg="#2a3698", fg="white", font=("Impact", 50))
+
+        L1.pack(pady=0, padx=0)
+        L1.place(bordermode="outside", height=130, width=1710, x=105, y=105)
+
+        L2 = tk.Label(C, text="Mitu osakonda on VOCO-s?", bg="#2a3698", fg="yellow", font=("Impact", 50))
+
+        L2.pack(padx=0, pady=0)
+        L2.place(bordermode="outside", height=260, width=600, x=655, y=300)
+
+        # creating checkboxes
+
+        CheckVar1 = tk.IntVar()
+        CheckVar2 = tk.IntVar()
+        C1 = tk.Checkbutton(C, text="7", bg="#2a3698", font=("Impact", 50), variable=CheckVar1, onvalue=1,
+                            offvalue=0, height=5, width=20, command=lambda: [Rightanswer(), Action2()])
+        C2 = tk.Checkbutton(C, text="11", bg="#2a3698", font=("Impact", 50), variable=CheckVar2, onvalue=1,
+                            offvalue=0, height=5, width=20, command=lambda: [Wronganswer(), Action2()])
+
+        C1.pack()
+        C2.pack()
+
+        C1.place(bordermode="outside", height=130, width=350, x=600, y=600)
+        C2.place(bordermode="outside", height=130, width=350, x=960, y=600)
+
+        C.pack(fill="both", expand=True)
+
+
+class Question10(tk.Frame):
+    def __init__(self, parent, controller):
+        tk.Frame.__init__(self, parent)
+
+        def Rightanswer():
+            global point_total
+            point_total += 100
+
+        def Wronganswer():
+            global point_total
+            point_total -= 100
+
+        def Answer():
+            if B2['state'] == tk.NORMAL:
+                B2['state'] = tk.DISABLED
+                B1['state'] = tk.DISABLED
+            else:
+                B2['state'] = tk.NORMAL
+                B1['state'] = tk.DISABLED
+
+        def Action1():
+            if C2['state'] == tk.NORMAL:
+                C2['state'] = tk.DISABLED
+            else:
+                C2['state'] = tk.NORMAL
+            if C1['state'] == tk.NORMAL:
+                C1['state'] = tk.DISABLED
+            else:
+                C1['state'] = tk.NORMAL
+
+        def Action2():
+            if B1['state'] == tk.NORMAL:
+                B1['state'] = tk.DISABLED
+            else:
+                B1['state'] = tk.NORMAL
+
+        # Creates board
+        C = tk.Canvas(self, bg="dark blue", height=1080, width=1920)
+
+        C.create_rectangle(100, 980, 1820, 100, width=10, outline="gold")
+
+        B1 = tk.Button(C, state=tk.DISABLED, text="Vasta", bg="#2a3698", fg="white", activebackground="#3d4dd2",
+                       font=("Impact", 45), command=lambda: [Answer(), Action1()])
+
+        B1.pack(pady=0, padx=0)
+        B1.place(bordermode="outside", height=140, width=405, x=755, y=835)
+
+        B2 = tk.Button(C, state=tk.DISABLED, text="Edasi >>>", bg="#2a3698", fg="yellow", activebackground="#3d4dd2",
+                       font=("Impact", 35), command=lambda: controller.show_frame(PointSum1))
+
+        B2.pack(pady=0, padx=0)
+        B2.place(bordermode="outside", height=100, width=250, x=1565, y=875)
+
+        L1 = tk.Label(C, text="Vasta küsimusele!", bg="#2a3698", fg="white", font=("Impact", 50))
+
+        L1.pack(pady=0, padx=0)
+        L1.place(bordermode="outside", height=130, width=1710, x=105, y=105)
+
+        L2 = tk.Label(C, text="Mis on VOCO rahvatantsurühma nimi?", bg="#2a3698", fg="yellow", font=("Impact", 50))
+
+        L2.pack(padx=0, pady=0)
+        L2.place(bordermode="outside", height=260, width=600, x=655, y=300)
+
+        # creating checkboxes
+
+        CheckVar1 = tk.IntVar()
+        CheckVar2 = tk.IntVar()
+        C1 = tk.Checkbutton(C, text="Triskel", bg="#2a3698", font=("Impact", 50), variable=CheckVar1, onvalue=1,
+                            offvalue=0, height=5, width=20, command=lambda: [Rightanswer(), Action2()])
+        C2 = tk.Checkbutton(C, text="Mõmmikud", bg="#2a3698", font=("Impact", 50), variable=CheckVar2, onvalue=1,
+                            offvalue=0, height=5, width=20, command=lambda: [Wronganswer(), Action2()])
+        C3 = tk.Checkbutton(C, text="Tornum", bg="#2a3698", font=("Impact", 50), variable=CheckVar1, onvalue=1,
+                            offvalue=0, height=5, width=20, command=lambda: [Wronganswer(), Action2()])
+
+        C1.pack()
+        C2.pack()
+
+        C1.place(bordermode="outside", height=130, width=350, x=600, y=600)
+        C2.place(bordermode="outside", height=130, width=350, x=960, y=600)
+
+        C.pack(fill="both", expand=True)
+
+
+class Question11(tk.Frame):
+    def __init__(self, parent, controller):
+        tk.Frame.__init__(self, parent)
+
+        def Rightanswer():
+            global point_total
+            point_total += 100
+
+        def Wronganswer():
+            global point_total
+            point_total -= 100
+
+        def Answer():
+            if B2['state'] == tk.NORMAL:
+                B2['state'] = tk.DISABLED
+                B1['state'] = tk.DISABLED
+            else:
+                B2['state'] = tk.NORMAL
+                B1['state'] = tk.DISABLED
+
+        def Action1():
+            if C2['state'] == tk.NORMAL:
+                C2['state'] = tk.DISABLED
+            else:
+                C2['state'] = tk.NORMAL
+            if C1['state'] == tk.NORMAL:
+                C1['state'] = tk.DISABLED
+            else:
+                C1['state'] = tk.NORMAL
+
+        def Action2():
+            if B1['state'] == tk.NORMAL:
+                B1['state'] = tk.DISABLED
+            else:
+                B1['state'] = tk.NORMAL
+
+        # Creates board
+        C = tk.Canvas(self, bg="dark blue", height=1080, width=1920)
+
+        C.create_rectangle(100, 980, 1820, 100, width=10, outline="gold")
+
+        B1 = tk.Button(C, state=tk.DISABLED, text="Vasta", bg="#2a3698", fg="white", activebackground="#3d4dd2",
+                       font=("Impact", 45), command=lambda: [Answer(), Action1()])
+
+        B1.pack(pady=0, padx=0)
+        B1.place(bordermode="outside", height=140, width=405, x=755, y=835)
+
+        B2 = tk.Button(C, state=tk.DISABLED, text="Edasi >>>", bg="#2a3698", fg="yellow", activebackground="#3d4dd2",
+                       font=("Impact", 35), command=lambda: controller.show_frame(PointSum1))
+
+        B2.pack(pady=0, padx=0)
+        B2.place(bordermode="outside", height=100, width=250, x=1565, y=875)
+
+        L1 = tk.Label(C, text="Vasta küsimusele!", bg="#2a3698", fg="white", font=("Impact", 50))
+
+        L1.pack(pady=0, padx=0)
+        L1.place(bordermode="outside", height=130, width=1710, x=105, y=105)
+
+        L2 = tk.Label(C, text="Mis pille saab kooli bändis mängida?", bg="#2a3698", fg="yellow", font=("Impact", 50))
+
+        L2.pack(padx=0, pady=0)
+        L2.place(bordermode="outside", height=260, width=600, x=655, y=300)
+
+        # creating checkboxes
+
+        CheckVar1 = tk.IntVar()
+        CheckVar2 = tk.IntVar()
+        C1 = tk.Checkbutton(C, text="Elektrikitarr", bg="#2a3698", font=("Impact", 50), variable=CheckVar1, onvalue=1,
+                            offvalue=0, height=5, width=20, command=lambda: [Rightanswer(), Action2()])
+        C2 = tk.Checkbutton(C, text="Orel", bg="#2a3698", font=("Impact", 50), variable=CheckVar2, onvalue=1,
+                            offvalue=0, height=5, width=20, command=lambda: [Wronganswer(), Action2()])
+        C3 = tk.Checkbutton(C, text="Oboe", bg="#2a3698", font=("Impact", 50), variable=CheckVar2, onvalue=1,
+                            offvalue=0, height=5, width=20, command=lambda: [Wronganswer(), Action2()])
+
+        C1.pack()
+        C2.pack()
+
+        C1.place(bordermode="outside", height=130, width=350, x=600, y=600)
+        C2.place(bordermode="outside", height=130, width=350, x=960, y=600)
+
+        C.pack(fill="both", expand=True)
+
+
+class Question12(tk.Frame):
+    def __init__(self, parent, controller):
+        tk.Frame.__init__(self, parent)
+
+        def Rightanswer():
+            global point_total
+            point_total += 100
+
+        def Wronganswer():
+            global point_total
+            point_total -= 100
+
+        def Answer():
+            if B2['state'] == tk.NORMAL:
+                B2['state'] = tk.DISABLED
+                B1['state'] = tk.DISABLED
+            else:
+                B2['state'] = tk.NORMAL
+                B1['state'] = tk.DISABLED
+
+        def Action1():
+            if C2['state'] == tk.NORMAL:
+                C2['state'] = tk.DISABLED
+            else:
+                C2['state'] = tk.NORMAL
+            if C1['state'] == tk.NORMAL:
+                C1['state'] = tk.DISABLED
+            else:
+                C1['state'] = tk.NORMAL
+
+        def Action2():
+            if B1['state'] == tk.NORMAL:
+                B1['state'] = tk.DISABLED
+            else:
+                B1['state'] = tk.NORMAL
+
+        # Creates board
+        C = tk.Canvas(self, bg="dark blue", height=1080, width=1920)
+
+        C.create_rectangle(100, 980, 1820, 100, width=10, outline="gold")
+
+        B1 = tk.Button(C, state=tk.DISABLED, text="Vasta", bg="#2a3698", fg="white", activebackground="#3d4dd2",
+                       font=("Impact", 45), command=lambda: [Answer(), Action1()])
+
+        B1.pack(pady=0, padx=0)
+        B1.place(bordermode="outside", height=140, width=405, x=755, y=835)
+
+        B2 = tk.Button(C, state=tk.DISABLED, text="Edasi >>>", bg="#2a3698", fg="yellow", activebackground="#3d4dd2",
+                       font=("Impact", 35), command=lambda: controller.show_frame(PointSum1))
+
+        B2.pack(pady=0, padx=0)
+        B2.place(bordermode="outside", height=100, width=250, x=1565, y=875)
+
+        L1 = tk.Label(C, text="Vasta küsimusele!", bg="#2a3698", fg="white", font=("Impact", 50))
+
+        L1.pack(pady=0, padx=0)
+        L1.place(bordermode="outside", height=130, width=1710, x=105, y=105)
+
+        L2 = tk.Label(C, text="Kus toimub õppetöö ja praktika?", bg="#2a3698", fg="yellow", font=("Impact", 50))
+
+        L2.pack(padx=0, pady=0)
+        L2.place(bordermode="outside", height=260, width=600, x=655, y=300)
+
+        # creating checkboxes
+
+        CheckVar1 = tk.IntVar()
+        CheckVar2 = tk.IntVar()
+        C1 = tk.Checkbutton(C, text="Labborites", bg="#2a3698", font=("Impact", 50), variable=CheckVar1, onvalue=1,
+                            offvalue=0, height=5, width=20, command=lambda: [Rightanswer(), Action2()])
+        C2 = tk.Checkbutton(C, text="Pommiaugus", bg="#2a3698", font=("Impact", 50), variable=CheckVar2, onvalue=1,
+                            offvalue=0, height=5, width=20, command=lambda: [Wronganswer(), Action2()])
+        C3 = tk.Checkbutton(C, text="Põllul", bg="#2a3698", font=("Impact", 50), variable=CheckVar2, onvalue=1,
+                            offvalue=0, height=5, width=20, command=lambda: [Wronganswer(), Action2()])
+
+        C1.pack()
+        C2.pack()
+
+        C1.place(bordermode="outside", height=130, width=350, x=600, y=600)
+        C2.place(bordermode="outside", height=130, width=350, x=960, y=600)
+
+        C.pack(fill="both", expand=True)
+
+
+class Question13(tk.Frame):
+    def __init__(self, parent, controller):
+        tk.Frame.__init__(self, parent)
+
+        def Rightanswer():
+            global point_total
+            point_total += 100
+
+        def Wronganswer():
+            global point_total
+            point_total -= 100
+
+        def Answer():
+            if B2['state'] == tk.NORMAL:
+                B2['state'] = tk.DISABLED
+                B1['state'] = tk.DISABLED
+            else:
+                B2['state'] = tk.NORMAL
+                B1['state'] = tk.DISABLED
+
+        def Action1():
+            if C2['state'] == tk.NORMAL:
+                C2['state'] = tk.DISABLED
+            else:
+                C2['state'] = tk.NORMAL
+            if C1['state'] == tk.NORMAL:
+                C1['state'] = tk.DISABLED
+            else:
+                C1['state'] = tk.NORMAL
+
+        def Action2():
+            if B1['state'] == tk.NORMAL:
+                B1['state'] = tk.DISABLED
+            else:
+                B1['state'] = tk.NORMAL
+
+        # Creates board
+        C = tk.Canvas(self, bg="dark blue", height=1080, width=1920)
+
+        C.create_rectangle(100, 980, 1820, 100, width=10, outline="gold")
+
+        B1 = tk.Button(C, state=tk.DISABLED, text="Vasta", bg="#2a3698", fg="white", activebackground="#3d4dd2",
+                       font=("Impact", 45), command=lambda: [Answer(), Action1()])
+
+        B1.pack(pady=0, padx=0)
+        B1.place(bordermode="outside", height=140, width=405, x=755, y=835)
+
+        B2 = tk.Button(C, state=tk.DISABLED, text="Edasi >>>", bg="#2a3698", fg="yellow", activebackground="#3d4dd2",
+                       font=("Impact", 35), command=lambda: controller.show_frame(PointSum1))
+
+        B2.pack(pady=0, padx=0)
+        B2.place(bordermode="outside", height=100, width=250, x=1565, y=875)
+
+        L1 = tk.Label(C, text="Vasta küsimusele!", bg="#2a3698", fg="white", font=("Impact", 50))
+
+        L1.pack(pady=0, padx=0)
+        L1.place(bordermode="outside", height=130, width=1710, x=105, y=105)
+
+        L2 = tk.Label(C, text="Mis on Voco oma enda e-päeviku nimi?", bg="#2a3698", fg="yellow", font=("Impact", 50))
+
+        L2.pack(padx=0, pady=0)
+        L2.place(bordermode="outside", height=260, width=600, x=655, y=300)
+
+        # creating checkboxes
+
+        CheckVar1 = tk.IntVar()
+        CheckVar2 = tk.IntVar()
+        C1 = tk.Checkbutton(C, text="Siseveeb", bg="#2a3698", font=("Impact", 50), variable=CheckVar1, onvalue=1,
+                            offvalue=0, height=5, width=20, command=lambda: [Rightanswer(), Action2()])
+        C2 = tk.Checkbutton(C, text="E-kool", bg="#2a3698", font=("Impact", 50), variable=CheckVar2, onvalue=1,
+                            offvalue=0, height=5, width=20, command=lambda: [Wronganswer(), Action2()])
+        C3 = tk.Checkbutton(C, text="Stuudium", bg="#2a3698", font=("Impact", 50), variable=CheckVar2, onvalue=1,
+                            offvalue=0, height=5, width=20, command=lambda: [Wronganswer(), Action2()])
+
+        C1.pack()
+        C2.pack()
+
+        C1.place(bordermode="outside", height=130, width=350, x=600, y=600)
+        C2.place(bordermode="outside", height=130, width=350, x=960, y=600)
+
+        C.pack(fill="both", expand=True)
+
+
+class Question14(tk.Frame):
+    def __init__(self, parent, controller):
+        tk.Frame.__init__(self, parent)
+
+        def Rightanswer():
+            global point_total
+            point_total += 100
+
+        def Wronganswer():
+            global point_total
+            point_total -= 100
+
+        def Answer():
+            if B2['state'] == tk.NORMAL:
+                B2['state'] = tk.DISABLED
+                B1['state'] = tk.DISABLED
+            else:
+                B2['state'] = tk.NORMAL
+                B1['state'] = tk.DISABLED
+
+        def Action1():
+            if C2['state'] == tk.NORMAL:
+                C2['state'] = tk.DISABLED
+            else:
+                C2['state'] = tk.NORMAL
+            if C1['state'] == tk.NORMAL:
+                C1['state'] = tk.DISABLED
+            else:
+                C1['state'] = tk.NORMAL
+
+        def Action2():
+            if B1['state'] == tk.NORMAL:
+                B1['state'] = tk.DISABLED
+            else:
+                B1['state'] = tk.NORMAL
+
+        # Creates board
+        C = tk.Canvas(self, bg="dark blue", height=1080, width=1920)
+
+        C.create_rectangle(100, 980, 1820, 100, width=10, outline="gold")
+
+        B1 = tk.Button(C, state=tk.DISABLED, text="Vasta", bg="#2a3698", fg="white", activebackground="#3d4dd2",
+                       font=("Impact", 45), command=lambda: [Answer(), Action1()])
+
+        B1.pack(pady=0, padx=0)
+        B1.place(bordermode="outside", height=140, width=405, x=755, y=835)
+
+        B2 = tk.Button(C, state=tk.DISABLED, text="Edasi >>>", bg="#2a3698", fg="yellow", activebackground="#3d4dd2",
+                       font=("Impact", 35), command=lambda: controller.show_frame(PointSum1))
+
+        B2.pack(pady=0, padx=0)
+        B2.place(bordermode="outside", height=100, width=250, x=1565, y=875)
+
+        L1 = tk.Label(C, text="Vasta küsimusele!", bg="#2a3698", fg="white", font=("Impact", 50))
+
+        L1.pack(pady=0, padx=0)
+        L1.place(bordermode="outside", height=130, width=1710, x=105, y=105)
+
+        L2 = tk.Label(C, text="Mida tähendab lühend IT", bg="#2a3698", fg="yellow", font=("Impact", 50))
+
+        L2.pack(padx=0, pady=0)
+        L2.place(bordermode="outside", height=260, width=600, x=655, y=300)
+
+        # creating checkboxes
+
+        CheckVar1 = tk.IntVar()
+        CheckVar2 = tk.IntVar()
+        C1 = tk.Checkbutton(C, text="Info-teadus", bg="#2a3698", font=("Impact", 50), variable=CheckVar1, onvalue=1,
+                            offvalue=0, height=5, width=20, command=lambda: [Wronganswer(), Action2()])
+        C2 = tk.Checkbutton(C, text="Info-tehnoloogia", bg="#2a3698", font=("Impact", 50), variable=CheckVar2,
+                            onvalue=1,
+                            offvalue=0, height=5, width=20, command=lambda: [Rightanswer(), Action2()])
+
+        C1.pack()
+        C2.pack()
+
+        C1.place(bordermode="outside", height=130, width=350, x=600, y=600)
+        C2.place(bordermode="outside", height=130, width=350, x=960, y=600)
+
+        C.pack(fill="both", expand=True)
+
+
+class Question15(tk.Frame):
+    def __init__(self, parent, controller):
+        tk.Frame.__init__(self, parent)
+
+        def Rightanswer():
+            global point_total
+            point_total += 100
+
+        def Wronganswer():
+            global point_total
+            point_total -= 100
+
+        def Answer():
+            if B2['state'] == tk.NORMAL:
+                B2['state'] = tk.DISABLED
+                B1['state'] = tk.DISABLED
+            else:
+                B2['state'] = tk.NORMAL
+                B1['state'] = tk.DISABLED
+
+        def Action1():
+            if C2['state'] == tk.NORMAL:
+                C2['state'] = tk.DISABLED
+            else:
+                C2['state'] = tk.NORMAL
+            if C1['state'] == tk.NORMAL:
+                C1['state'] = tk.DISABLED
+            else:
+                C1['state'] = tk.NORMAL
+
+        def Action2():
+            if B1['state'] == tk.NORMAL:
+                B1['state'] = tk.DISABLED
+            else:
+                B1['state'] = tk.NORMAL
+
+        # Creates board
+        C = tk.Canvas(self, bg="dark blue", height=1080, width=1920)
+
+        C.create_rectangle(100, 980, 1820, 100, width=10, outline="gold")
+
+        B1 = tk.Button(C, state=tk.DISABLED, text="Vasta", bg="#2a3698", fg="white", activebackground="#3d4dd2",
+                       font=("Impact", 45), command=lambda: [Answer(), Action1()])
+
+        B1.pack(pady=0, padx=0)
+        B1.place(bordermode="outside", height=140, width=405, x=755, y=835)
+
+        B2 = tk.Button(C, state=tk.DISABLED, text="Edasi >>>", bg="#2a3698", fg="yellow", activebackground="#3d4dd2",
+                       font=("Impact", 35), command=lambda: controller.show_frame(PointSum1))
+
+        B2.pack(pady=0, padx=0)
+        B2.place(bordermode="outside", height=100, width=250, x=1565, y=875)
+
+        L1 = tk.Label(C, text="Vasta küsimusele!", bg="#2a3698", fg="white", font=("Impact", 50))
+
+        L1.pack(pady=0, padx=0)
+        L1.place(bordermode="outside", height=130, width=1710, x=105, y=105)
+
+        L2 = tk.Label(C, text="Kas selle erialaga saab olulise eelise õpigute jätkamiseks kõrgkoolis \n"
+                              "ja võib spetsialiseeruda IT valdkonna profiks?", bg="#2a3698", fg="yellow",
+                      font=("Impact", 50))
+
+        L2.pack(padx=0, pady=0)
+        L2.place(bordermode="outside", height=260, width=600, x=655, y=300)
+
+        # creating checkboxes
+
+        CheckVar1 = tk.IntVar()
+        CheckVar2 = tk.IntVar()
+        C1 = tk.Checkbutton(C, text="Jah", bg="#2a3698", font=("Impact", 50), variable=CheckVar1, onvalue=1,
+                            offvalue=0, height=5, width=20, command=lambda: [Rightanswer(), Action2()])
+        C2 = tk.Checkbutton(C, text="Ei", bg="#2a3698", font=("Impact", 50), variable=CheckVar2, onvalue=1,
+                            offvalue=0, height=5, width=20, command=lambda: [Wronganswer(), Action2()])
+
+        C1.pack()
+        C2.pack()
+
+        C1.place(bordermode="outside", height=130, width=350, x=600, y=600)
+        C2.place(bordermode="outside", height=130, width=350, x=960, y=600)
+
+        C.pack(fill="both", expand=True)
+
+
+class Question16(tk.Frame):
+    def __init__(self, parent, controller):
+        tk.Frame.__init__(self, parent)
+
+        def Rightanswer():
+            global point_total
+            point_total += 100
+
+        def Wronganswer():
+            global point_total
+            point_total -= 100
+
+        def Answer():
+            if B2['state'] == tk.NORMAL:
+                B2['state'] = tk.DISABLED
+                B1['state'] = tk.DISABLED
+            else:
+                B2['state'] = tk.NORMAL
+                B1['state'] = tk.DISABLED
+
+        def Action1():
+            if C2['state'] == tk.NORMAL:
+                C2['state'] = tk.DISABLED
+            else:
+                C2['state'] = tk.NORMAL
+            if C1['state'] == tk.NORMAL:
+                C1['state'] = tk.DISABLED
+            else:
+                C1['state'] = tk.NORMAL
+
+        def Action2():
+            if B1['state'] == tk.NORMAL:
+                B1['state'] = tk.DISABLED
+            else:
+                B1['state'] = tk.NORMAL
+
+        # Creates board
+        C = tk.Canvas(self, bg="dark blue", height=1080, width=1920)
+
+        C.create_rectangle(100, 980, 1820, 100, width=10, outline="gold")
+
+        B1 = tk.Button(C, state=tk.DISABLED, text="Vasta", bg="#2a3698", fg="white", activebackground="#3d4dd2",
+                       font=("Impact", 45), command=lambda: [Answer(), Action1()])
+
+        B1.pack(pady=0, padx=0)
+        B1.place(bordermode="outside", height=140, width=405, x=755, y=835)
+
+        B2 = tk.Button(C, state=tk.DISABLED, text="Edasi >>>", bg="#2a3698", fg="yellow", activebackground="#3d4dd2",
+                       font=("Impact", 35), command=lambda: controller.show_frame(PointSum1))
+
+        B2.pack(pady=0, padx=0)
+        B2.place(bordermode="outside", height=100, width=250, x=1565, y=875)
+
+        L1 = tk.Label(C, text="Vasta küsimusele!", bg="#2a3698", fg="white", font=("Impact", 50))
+
+        L1.pack(pady=0, padx=0)
+        L1.place(bordermode="outside", height=130, width=1710, x=105, y=105)
+
+        L2 = tk.Label(C, text="Milline eriala on eriliselt \n"
+                              " kiiresti kasvav ja maailma tulevik?", bg="#2a3698", fg="yellow", font=("Impact", 50))
+
+        L2.pack(padx=0, pady=0)
+        L2.place(bordermode="outside", height=260, width=600, x=655, y=300)
+
+        # creating checkboxes
+
+        CheckVar1 = tk.IntVar()
+        CheckVar2 = tk.IntVar()
+        C1 = tk.Checkbutton(C, text="Veebihaldur", bg="#2a3698", font=("Impact", 50), variable=CheckVar1, onvalue=1,
+                            offvalue=0, height=5, width=20, command=lambda: [Wronganswer(), Action2()])
+        C2 = tk.Checkbutton(C, text="Tarkvaraarendaja", bg="#2a3698", font=("Impact", 50), variable=CheckVar2,
+                            onvalue=1,
+                            offvalue=0, height=5, width=20, command=lambda: [Rightanswer(), Action2()])
+
+        C1.pack()
+        C2.pack()
+
+        C1.place(bordermode="outside", height=130, width=350, x=600, y=600)
+        C2.place(bordermode="outside", height=130, width=350, x=960, y=600)
+
+        C.pack(fill="both", expand=True)
+
+
+class Question17(tk.Frame):
+    def __init__(self, parent, controller):
+        tk.Frame.__init__(self, parent)
+
+        def Rightanswer():
+            global point_total
+            point_total += 100
+
+        def Wronganswer():
+            global point_total
+            point_total -= 100
+
+        def Answer():
+            if B2['state'] == tk.NORMAL:
+                B2['state'] = tk.DISABLED
+                B1['state'] = tk.DISABLED
+            else:
+                B2['state'] = tk.NORMAL
+                B1['state'] = tk.DISABLED
+
+        def Action1():
+            if C2['state'] == tk.NORMAL:
+                C2['state'] = tk.DISABLED
+            else:
+                C2['state'] = tk.NORMAL
+            if C1['state'] == tk.NORMAL:
+                C1['state'] = tk.DISABLED
+            else:
+                C1['state'] = tk.NORMAL
+
+        def Action2():
+            if B1['state'] == tk.NORMAL:
+                B1['state'] = tk.DISABLED
+            else:
+                B1['state'] = tk.NORMAL
+
+        # Creates board
+        C = tk.Canvas(self, bg="dark blue", height=1080, width=1920)
+
+        C.create_rectangle(100, 980, 1820, 100, width=10, outline="gold")
+
+        B1 = tk.Button(C, state=tk.DISABLED, text="Vasta", bg="#2a3698", fg="white", activebackground="#3d4dd2",
+                       font=("Impact", 45), command=lambda: [Answer(), Action1()])
+
+        B1.pack(pady=0, padx=0)
+        B1.place(bordermode="outside", height=140, width=405, x=755, y=835)
+
+        B2 = tk.Button(C, state=tk.DISABLED, text="Edasi >>>", bg="#2a3698", fg="yellow", activebackground="#3d4dd2",
+                       font=("Impact", 35), command=lambda: controller.show_frame(PointSum1))
+
+        B2.pack(pady=0, padx=0)
+        B2.place(bordermode="outside", height=100, width=250, x=1565, y=875)
+
+        L1 = tk.Label(C, text="Vasta küsimusele!", bg="#2a3698", fg="white", font=("Impact", 50))
+
+        L1.pack(pady=0, padx=0)
+        L1.place(bordermode="outside", height=130, width=1710, x=105, y=105)
+
+        L2 = tk.Label(C, text="Tegu on globaalse kasvava ettevõtlusvaldkonnaga, kus heade spetsialistide järele \n"
+                              " on pidevalt suur nõudlus, mistõttu tarkvaraarendaja \n"
+                              " leiab hõlpsasti tööd ka väljaspool Eestit.", bg="#2a3698", fg="yellow",
+                      font=("Impact", 50))
+
+        L2.pack(padx=0, pady=0)
+        L2.place(bordermode="outside", height=260, width=600, x=655, y=300)
+
+        # creating checkboxes
+
+        CheckVar1 = tk.IntVar()
+        CheckVar2 = tk.IntVar()
+        C1 = tk.Checkbutton(C, text="Õige", bg="#2a3698", font=("Impact", 50), variable=CheckVar1, onvalue=1,
+                            offvalue=0, height=5, width=20, command=lambda: [Rightanswer(), Action2()])
+        C2 = tk.Checkbutton(C, text="Vale", bg="#2a3698", font=("Impact", 50), variable=CheckVar2, onvalue=1,
+                            offvalue=0, height=5, width=20, command=lambda: [Wronganswer(), Action2()])
+
+        C1.pack()
+        C2.pack()
+
+        C1.place(bordermode="outside", height=130, width=350, x=600, y=600)
+        C2.place(bordermode="outside", height=130, width=350, x=960, y=600)
+
+        C.pack(fill="both", expand=True)
+
+
+class Question18(tk.Frame):
+    def __init__(self, parent, controller):
+        tk.Frame.__init__(self, parent)
+
+        def Rightanswer():
+            global point_total
+            point_total += 100
+
+        def Wronganswer():
+            global point_total
+            point_total -= 100
+
+        def Answer():
+            if B2['state'] == tk.NORMAL:
+                B2['state'] = tk.DISABLED
+                B1['state'] = tk.DISABLED
+            else:
+                B2['state'] = tk.NORMAL
+                B1['state'] = tk.DISABLED
+
+        def Action1():
+            if C2['state'] == tk.NORMAL:
+                C2['state'] = tk.DISABLED
+            else:
+                C2['state'] = tk.NORMAL
+            if C1['state'] == tk.NORMAL:
+                C1['state'] = tk.DISABLED
+            else:
+                C1['state'] = tk.NORMAL
+
+        def Action2():
+            if B1['state'] == tk.NORMAL:
+                B1['state'] = tk.DISABLED
+            else:
+                B1['state'] = tk.NORMAL
+
+        # Creates board
+        C = tk.Canvas(self, bg="dark blue", height=1080, width=1920)
+
+        C.create_rectangle(100, 980, 1820, 100, width=10, outline="gold")
+
+        B1 = tk.Button(C, state=tk.DISABLED, text="Vasta", bg="#2a3698", fg="white", activebackground="#3d4dd2",
+                       font=("Impact", 45), command=lambda: [Answer(), Action1()])
+
+        B1.pack(pady=0, padx=0)
+        B1.place(bordermode="outside", height=140, width=405, x=755, y=835)
+
+        B2 = tk.Button(C, state=tk.DISABLED, text="Edasi >>>", bg="#2a3698", fg="yellow", activebackground="#3d4dd2",
+                       font=("Impact", 35), command=lambda: controller.show_frame(PointSum1))
+
+        B2.pack(pady=0, padx=0)
+        B2.place(bordermode="outside", height=100, width=250, x=1565, y=875)
+
+        L1 = tk.Label(C, text="Vasta küsimusele!", bg="#2a3698", fg="white", font=("Impact", 50))
+
+        L1.pack(pady=0, padx=0)
+        L1.place(bordermode="outside", height=130, width=1710, x=105, y=105)
+
+        L2 = tk.Label(C, text="Tarkvaraarendajad saavad töötada vähestes \n"
+                              " valdkondades.", bg="#2a3698", fg="yellow", font=("Impact", 50))
+
+        L2.pack(padx=0, pady=0)
+        L2.place(bordermode="outside", height=260, width=600, x=655, y=300)
+
+        # creating checkboxes
+
+        CheckVar1 = tk.IntVar()
+        CheckVar2 = tk.IntVar()
+        C1 = tk.Checkbutton(C, text="Õige", bg="#2a3698", font=("Impact", 50), variable=CheckVar1, onvalue=1,
+                            offvalue=0, height=5, width=20, command=lambda: [Wronganswer(), Action2()])
+        C2 = tk.Checkbutton(C, text="Vale", bg="#2a3698", font=("Impact", 50), variable=CheckVar2, onvalue=1,
+                            offvalue=0, height=5, width=20, command=lambda: [Rightanswer(), Action2()])
+
+        C1.pack()
+        C2.pack()
+
+        C1.place(bordermode="outside", height=130, width=350, x=600, y=600)
+        C2.place(bordermode="outside", height=130, width=350, x=960, y=600)
+
+        C.pack(fill="both", expand=True)
+
+
+class Question19(tk.Frame):
+    def __init__(self, parent, controller):
+        tk.Frame.__init__(self, parent)
+
+        def Rightanswer():
+            global point_total
+            point_total += 100
+
+        def Wronganswer():
+            global point_total
+            point_total -= 100
+
+        def Answer():
+            if B2['state'] == tk.NORMAL:
+                B2['state'] = tk.DISABLED
+                B1['state'] = tk.DISABLED
+            else:
+                B2['state'] = tk.NORMAL
+                B1['state'] = tk.DISABLED
+
+        def Action1():
+            if C2['state'] == tk.NORMAL:
+                C2['state'] = tk.DISABLED
+            else:
+                C2['state'] = tk.NORMAL
+            if C1['state'] == tk.NORMAL:
+                C1['state'] = tk.DISABLED
+            else:
+                C1['state'] = tk.NORMAL
+
+        def Action2():
+            if B1['state'] == tk.NORMAL:
+                B1['state'] = tk.DISABLED
+            else:
+                B1['state'] = tk.NORMAL
+
+        # Creates board
+        C = tk.Canvas(self, bg="dark blue", height=1080, width=1920)
+
+        C.create_rectangle(100, 980, 1820, 100, width=10, outline="gold")
+
+        B1 = tk.Button(C, state=tk.DISABLED, text="Vasta", bg="#2a3698", fg="white", activebackground="#3d4dd2",
+                       font=("Impact", 45), command=lambda: [Answer(), Action1()])
+
+        B1.pack(pady=0, padx=0)
+        B1.place(bordermode="outside", height=140, width=405, x=755, y=835)
+
+        B2 = tk.Button(C, state=tk.DISABLED, text="Edasi >>>", bg="#2a3698", fg="yellow", activebackground="#3d4dd2",
+                       font=("Impact", 35), command=lambda: controller.show_frame(PointSum1))
+
+        B2.pack(pady=0, padx=0)
+        B2.place(bordermode="outside", height=100, width=250, x=1565, y=875)
+
+        L1 = tk.Label(C, text="Vasta küsimusele!", bg="#2a3698", fg="white", font=("Impact", 50))
+
+        L1.pack(pady=0, padx=0)
+        L1.place(bordermode="outside", height=130, width=1710, x=105, y=105)
+
+        L2 = tk.Label(C, text="Eesti IT-sektoris on palgatase keskmisest kõrgem ning tarkvaraarendaja \n"
+                              "töötasu alumine määr võib ületada \n"
+                              " Eesti keskmise töötasu", bg="#2a3698", fg="yellow", font=("Impact", 50))
+
+        L2.pack(padx=0, pady=0)
+        L2.place(bordermode="outside", height=260, width=600, x=655, y=300)
+
+        # creating checkboxes
+
+        CheckVar1 = tk.IntVar()
+        CheckVar2 = tk.IntVar()
+        C1 = tk.Checkbutton(C, text="Õige", bg="#2a3698", font=("Impact", 50), variable=CheckVar1, onvalue=1,
+                            offvalue=0, height=5, width=20, command=lambda: [Rightanswer(), Action2()])
+        C2 = tk.Checkbutton(C, text="Vale", bg="#2a3698", font=("Impact", 50), variable=CheckVar2, onvalue=1,
+                            offvalue=0, height=5, width=20, command=lambda: [Wronganswer(), Action2()])
+
+        C1.pack()
+        C2.pack()
+
+        C1.place(bordermode="outside", height=130, width=350, x=600, y=600)
+        C2.place(bordermode="outside", height=130, width=350, x=960, y=600)
+
+        C.pack(fill="both", expand=True)
+
+
+class Question20(tk.Frame):
+    def __init__(self, parent, controller):
+        tk.Frame.__init__(self, parent)
+
+        def Rightanswer():
+            global point_total
+            point_total += 100
+
+        def Wronganswer():
+            global point_total
+            point_total -= 100
+
+        def Answer():
+            if B2['state'] == tk.NORMAL:
+                B2['state'] = tk.DISABLED
+                B1['state'] = tk.DISABLED
+            else:
+                B2['state'] = tk.NORMAL
+                B1['state'] = tk.DISABLED
+
+        def Action1():
+            if C2['state'] == tk.NORMAL:
+                C2['state'] = tk.DISABLED
+            else:
+                C2['state'] = tk.NORMAL
+            if C1['state'] == tk.NORMAL:
+                C1['state'] = tk.DISABLED
+            else:
+                C1['state'] = tk.NORMAL
+
+        def Action2():
+            if B1['state'] == tk.NORMAL:
+                B1['state'] = tk.DISABLED
+            else:
+                B1['state'] = tk.NORMAL
+
+        # Creates board
+        C = tk.Canvas(self, bg="dark blue", height=1080, width=1920)
+
+        C.create_rectangle(100, 980, 1820, 100, width=10, outline="gold")
+
+        B1 = tk.Button(C, state=tk.DISABLED, text="Vasta", bg="#2a3698", fg="white", activebackground="#3d4dd2",
+                       font=("Impact", 45), command=lambda: [Answer(), Action1()])
+
+        B1.pack(pady=0, padx=0)
+        B1.place(bordermode="outside", height=140, width=405, x=755, y=835)
+
+        B2 = tk.Button(C, state=tk.DISABLED, text="Edasi >>>", bg="#2a3698", fg="yellow", activebackground="#3d4dd2",
+                       font=("Impact", 35), command=lambda: controller.show_frame(PointSum1))
+
+        B2.pack(pady=0, padx=0)
+        B2.place(bordermode="outside", height=100, width=250, x=1565, y=875)
+
+        L1 = tk.Label(C, text="Vasta küsimusele!", bg="#2a3698", fg="white", font=("Impact", 50))
+
+        L1.pack(pady=0, padx=0)
+        L1.place(bordermode="outside", height=130, width=1710, x=105, y=105)
+
+        L2 = tk.Label(C, text="Kas IT-süsteemide spetsialist saab tööle IT-süsteemide \n"
+                              "spetsialistina või \n"
+                              "klienditoespetsialistina?", bg="#2a3698", fg="yellow", font=("Impact", 50))
+
+        L2.pack(padx=0, pady=0)
+        L2.place(bordermode="outside", height=260, width=600, x=655, y=300)
+
+        # creating checkboxes
+
+        CheckVar1 = tk.IntVar()
+        CheckVar2 = tk.IntVar()
+        C1 = tk.Checkbutton(C, text="Klienditugi", bg="#2a3698", font=("Impact", 50), variable=CheckVar1, onvalue=1,
+                            offvalue=0, height=5, width=20, command=lambda: [Wronganswer(), Action2()])
+        C2 = tk.Checkbutton(C, text="Spetsialist", bg="#2a3698", font=("Impact", 50), variable=CheckVar2, onvalue=1,
+                            offvalue=0, height=5, width=20, command=lambda: [Rightanswer(), Action2()])
 
         C1.pack()
         C2.pack()
@@ -963,7 +2290,7 @@ class PointSum1(tk.Frame):
 
         L1.pack(pady=0, padx=0)
         L1.place(bordermode="outside", height=130, width=1710, x=105, y=105)
-        
+
         L2 = tk.Label(C, text="current score:", bg="#2a3698", fg="yellow", font=("Impact", 70))
         L2.pack(padx=0, pady=0)
         L2.place(bordermode="outside", height=360, width=1000, x=465, y=300)
