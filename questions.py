@@ -25,3 +25,8 @@ question_5 = ["Eesti IT-sektoris on palgatase keskmisest kõrgem ning tarkvaraar
 question_1_2 = ["Kas IT-süsteemide spetsialist saab tööle IT-süsteemide spetsialistina või klienditoespetsialistina?    (SPETSIALIST/KLIENDITUGI)", "SPETSIALIST", 100]
 question_2_2 = ["Kas tegu on ettevõttevaldkonnaga, kus spetsialistie järele on väike nõudlus?    (JAH/EI)", "EI", 200]
 question_3_2 = ["Kas IT-spetsialist haldab arvutivõrke, telefoniteenuseid ja vajadusel ehitab müüri?      (JAH/EI)", "EI", 300]
+
+Question1,  Question2,  Question3,  Question4,  Question5,
+                  Question6,  Question7,  Question8,  Question9,  Question10,  Question11,  Question12,  Question13,
+                  Question14,  Question15,  Question16,  Question17,  Question18,  Question19,  Question20,
+                  Question21,  Question22,  Question23,  Question24,  Question25
